@@ -1,0 +1,302 @@
+{
+  "main": {
+    "id": "f2b121e127c3d10a",
+    "type": "split",
+    "children": [
+      {
+        "id": "9dd96e85bab6a09b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "71eac90251d3e315",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "study/computer_science/networks/atomics/Protocol - Domain Name System (DNS).md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Protocol - Domain Name System (DNS)"
+            }
+          }
+        ],
+        "stacked": true
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d7067ab9511805a2",
+    "type": "split",
+    "children": [
+      {
+        "id": "465de32f67b81185",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "240d40fb5f374fc2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "efcadbed061ff8e8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e287345f55ebaa8e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 381.9959907531738
+  },
+  "right": {
+    "id": "be969ee258392cf9",
+    "type": "split",
+    "children": [
+      {
+        "id": "b50244f3827be4af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9bcc120d6b71df86",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "tests/stack.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for stack"
+            }
+          },
+          {
+            "id": "f72caa99ef8e9678",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "tests/stack.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from stack"
+            }
+          },
+          {
+            "id": "aa8b1fc6999ab7ee",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "537634fa82124008",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "research/eu/drafts/paper1_heat_adi_pinn.pdf",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "b06a2955f09643fc",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "71af71c65966146c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "c9bbebc7662b49b6",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "2341ae7ec2cd4547",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "research/eu/drafts/paper1_heat_adi_pinn.pdf"
+              },
+              "icon": "lucide-info",
+              "title": "File properties"
+            }
+          },
+          {
+            "id": "95f8adec403d8901",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
+          },
+          {
+            "id": "2786de2a90af4a3b",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
+          }
+        ],
+        "currentTab": 8
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-spaced-repetition:Review flashcards": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "pdf-plus:PDF++: Toggle auto-copy": true,
+      "pdf-plus:PDF++: Toggle auto-focus": true,
+      "pdf-plus:PDF++: Toggle auto-paste": true,
+      "obsidian-excalidraw-plugin:New drawing": true,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "71eac90251d3e315",
+  "lastOpenFiles": [
+    "study/computer_science/networks/02-application-layer.md",
+    "study/computer_science/networks/01-introduction-to-networks.md",
+    "output/inbox/dns.md",
+    "study/computer_science/networks/atomics/Protocol - Electronic Mail (SMTP, POP3, IMAP).md",
+    "study/computer_science/networks/atomics/Untitled.md",
+    "study/computer_science/networks/atomics/Mechanism - Web Caching and Proxies.md",
+    "output/inbox/network-lecture-02.md",
+    "study/computer_science/networks/lecture_01.md",
+    "study/computer_science/networks/atomics/Protocol - Domain Name System (DNS).md",
+    "research/eu/drafts/paper1_heat_adi_pinn.pdf",
+    "research/eu/drafts/figures/geometry_domain_holes.png",
+    "research/eu/drafts/figures/adi_regular_benchmark.png",
+    "research/eu/drafts/figures/mlp_and_pinn_architecture.png",
+    "research/irregular_domains_ideas.md",
+    "research/eu/drafts/figures/adi_vs_pinn_baseline.png",
+    "research/eu/drafts/figures/nn_vs_pinn_architecture.png",
+    "research/eu/drafts/IMPROVEMENTS_PAPER1.md",
+    "research/eu/drafts/paper1_heat_adi_pinn.md",
+    "research/eu/drafts/figures/fig_cell_12_1.png",
+    "research/eu/drafts/figures/slice_y030.png",
+    "research/eu/drafts/figures/loss_convergence.png",
+    "research/eu/drafts/figures/fig_cell_14_2.png",
+    "research/eu/paper1_heat_adi_pinn.pdf",
+    "research/eu/drafts/paper1_heat_adi_pinn.out",
+    "research/eu/drafts/paper1_heat_adi_pinn.aux",
+    "research/eu/drafts/paper1_heat_adi_pinn.log",
+    "research/eu/drafts/paper1_heat_adi_pinn.tex",
+    "research/eu/drafts/figures",
+    "research/papers/Ricardo Pereira-Tese2019.pdf",
+    "research/papers",
+    "research/PINNs and Reaction-Diffusion Systems.md",
+    "research/eu/drafts",
+    "research/eu/Untitled.md",
+    "research/Untitled.md",
+    "output/inbox/eletronic_mails.md",
+    "output/inbox/poscomp_25.md",
+    "output/inbox/network-lecture-001.md",
+    "output/inbox/network-lecture-01.md",
+    "study/computer_science/networks/flashcards/flashcards-02-application-layer.md",
+    "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
+    "output/inbox-ai/research_guide.md",
+    "study/computer_science/networks/atomics/Protocol - FTP and Out-of-Band Control.md",
+    "study/computer_science/networks/atomics/Protocol - HTTP and Web.md",
+    "study/computer_science/networks/atomics/Mechanism - Sockets and Inter-Process Communication.md",
+    "output/inbox-ai/poscomp_math.md",
+    "attachments/Pasted image 20260515084106.png",
+    "assets/draws/so iteration.canvas",
+    "tech/data_structure/paths.canvas",
+    "teste.canvas"
+  ]
+}

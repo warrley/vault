@@ -1,0 +1,10 @@
+/* Faz o fundo branco do PDF desaparecer em temas claros (Modo Light) */
+.theme-light .workspace-leaf-content[data-type="pdf"],
+.theme-light .pdf-embed {
+    mix-blend-mode: multiply;
+}
+
+/* Opcional: Aumenta um pouco o contraste para o texto ficar mais nítido */
+.theme-light .pdf-container {
+    filter: contrast(1.4)
+}

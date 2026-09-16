@@ -1,0 +1,10 @@
+{
+  "theme": "system",
+  "cssTheme": "Cupertino",
+  "enabledCssSnippets": [
+    "pdf_transparente"
+  ],
+  "nativeMenus": false,
+  "accentColor": "#6e0202",
+  "baseFontSize": 20
+}

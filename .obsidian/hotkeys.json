@@ -1,0 +1,55 @@
+{
+  "darlal-switcher-plus:switcher-plus:open-headings": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "L"
+    }
+  ],
+  "obsidian-spaced-repetition:srs-note-review-open-note": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "N"
+    }
+  ],
+  "obsidian-spaced-repetition:srs-note-review-easy": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "Y"
+    }
+  ],
+  "obsidian-spaced-repetition:srs-note-review-good": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "U"
+    }
+  ],
+  "obsidian-spaced-repetition:srs-note-review-hard": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "H"
+    }
+  ],
+  "paper_importer:import_pdf_from_arxiv": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "P"
+    }
+  ]
+}
