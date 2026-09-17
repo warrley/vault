@@ -75,6 +75,14 @@ DNS is a globally distributed, hierarchical database translating hostnames to IP
 
 ---
 
+### G. Application Architectures & P2P File Distribution
+Application architectures allocate discovery and data transfer duties between servers and peers.
+- **Key Concepts:** Client-Server upload bottleneck ($D_{cs} = O(N)$), P2P self-scalability ($D_{p2p} = O(1)$), Napster hybrid directory, Gnutella overlay flooding and TTL, KaZaA superpeers, and BitTorrent Tit-for-Tat / Rarest-First algorithms.
+- **Full Deep Dive:** [[Architecture - Application Architectures and P2P File Distribution]]
+![[Architecture - Application Architectures and P2P File Distribution#Summary]]
+
+---
+
 ## 3. High-Yield Flashcard Review Deck
 All test-oriented, high-precision flashcards for this module are organized in:
 👉 **[[flashcards-02-application-layer]]**

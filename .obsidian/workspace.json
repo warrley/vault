@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "output/inbox/peerxclient-server.md",
-                "mode": "source",
+                "file": "study/computer_science/networks/flashcards/flashcards-02-application-layer.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "peerxclient-server"
+              "title": "flashcards-02-application-layer"
             }
           }
         ],
@@ -77,13 +77,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 381.9959907531738,
-    "collapsed": true
+    "width": 269.42047119140625
   },
   "right": {
     "id": "be969ee258392cf9",
@@ -249,12 +247,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "95f8adec403d8901",
+  "active": "71eac90251d3e315",
   "lastOpenFiles": [
-    "study/computer_science/algorithms/lecture-04.md",
     "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
-    "study/computer_science/networks/atomics/Protocol - Domain Name System (DNS).md",
+    "study/computer_science/networks/atomics/Architecture - Application Architectures and P2P File Distribution.md",
     "study/computer_science/networks/02-application-layer.md",
+    "output/inbox/peerxclient-server.md",
+    "study/computer_science/algorithms/lecture-04.md",
+    "study/computer_science/networks/atomics/Protocol - Domain Name System (DNS).md",
     "study/computer_science/networks/01-introduction-to-networks.md",
     "output/inbox/dns.md",
     "study/computer_science/networks/atomics/Protocol - Electronic Mail (SMTP, POP3, IMAP).md",
@@ -294,8 +294,6 @@
     "study/computer_science/networks/flashcards/flashcards-02-application-layer.md",
     "output/inbox-ai/research_guide.md",
     "study/computer_science/networks/atomics/Protocol - FTP and Out-of-Band Control.md",
-    "study/computer_science/networks/atomics/Protocol - HTTP and Web.md",
-    "study/computer_science/networks/atomics/Mechanism - Sockets and Inter-Process Communication.md",
     "attachments/Pasted image 20260515084106.png",
     "assets/draws/so iteration.canvas",
     "tech/data_structure/paths.canvas",

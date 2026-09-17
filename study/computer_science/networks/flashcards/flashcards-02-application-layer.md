@@ -91,3 +91,29 @@ What is DNS Cache Poisoning (Kaminsky Attack) and how do modern resolvers defend
 
 What is the difference between DNS over TLS (DoT) and DNS over HTTPS (DoH)?::* **DoT (RFC 7858)**: Runs DNS directly inside a TLS tunnel on a dedicated port (**TCP 853**). Visible as DNS traffic at the network layer.<br>* **DoH (RFC 8484)**: Encapsulates DNS queries within standard HTTPS/HTTP/2/3 traffic over **port 443**, making DNS queries indistinguishable from regular web traffic to prevent ISP monitoring and censorship.
 <!--ID: 1726000023-->
+
+---
+
+## 5. Application Architectures & P2P File Distribution (Exercises 2, 11, 12, 13)
+
+What are the theoretical lower bound formulas for file distribution time in Client-Server ($D_{cs}$) vs P2P ($D_{p2p}$)?::* **Client-Server**: $D_{cs} \ge \max\left\{ \frac{N \cdot F}{u_s}, \; \frac{F}{d_{\min}} \right\}$ (Scales linearly as $O(N)$ with number of clients $N$).<br>* **P2P**: $D_{p2p} \ge \max\left\{ \frac{F}{u_s}, \; \frac{F}{d_{\min}}, \; \frac{N \cdot F}{u_s + \sum_{i=1}^N u_i} \right\}$ (Asymptotically bounded by $O(1)$ as $N \to \infty$ due to self-scalability).
+<!--ID: 1726000024-->
+
+What are the two orthogonal problems that every distributed network application must solve?::1. **Indexing / Discovery Service**: Identifying which host holds the desired resource and retrieving its IP/port.<br>2. **Data Transfer Service**: Transporting the actual payload bits from source to destination across the network.
+<!--ID: 1726000025-->
+
+Why is Napster classified as a Hybrid P2P architecture, and what were its 3 fatal design/operational flaws?::* **Why Hybrid**: File discovery/indexing was **centralized** on a database server, but the actual data transfer was **decentralized** (direct peer-to-peer TCP).<br>* **3 Fatal Flaws**: 1. Single Point of Failure (SPOF); 2. Centralized signaling/churn bottleneck; 3. Legal/copyright liability target.
+<!--ID: 1726000026-->
+
+What is an Overlay Network in the context of P2P systems, and why can't P2P applications simply use IP Broadcast for file discovery?::An **Overlay Network** is an application-layer virtual topology where nodes are peer hosts and edges are active TCP connections between them. P2P cannot use Layer 3 IP Broadcast (`255.255.255.255`) because **Internet routers drop broadcast packets** at subnet boundaries to prevent global network storms.
+<!--ID: 1726000027-->
+
+How does Gnutella implement decentralized search, and how does it prevent routing loops and query storms?::Gnutella uses **Limited-Scope Query Flooding** over overlay TCP links. Loops and storms are prevented by: 1. Unique **Message IDs** cached by peers to drop duplicates; 2. A **TTL (Time-To-Live)** field decremented at each hop (dropped when $\text{TTL} = 0$). Responses return as `QueryHit` along the **exact reverse path**.
+<!--ID: 1726000028-->
+
+How does the KaZaA (Superpeer) architecture exploit peer heterogeneity to improve scalability over Gnutella?::It divides nodes into **Ordinary Peers** (low-bandwidth/transient edge devices) and **Superpeers** (high-bandwidth/high-uptime nodes). Ordinary peers only connect to one Superpeer and upload their index to it. Query flooding is restricted **strictly between Superpeers**, shielding slow edge links from control traffic.
+<!--ID: 1726000029-->
+
+In BitTorrent, what are the Rarest-First chunk selection policy and the Tit-for-Tat choking algorithm?::* **Rarest-First**: Peers request the rarest chunks in their local swarm first, preventing rare chunks from vanishing if seeders leave and maximizing trading diversity.<br>* **Tit-for-Tat (Choking / Unchoking)**: Every 10s, a peer unchokes the top 4 neighbors providing the highest download rates. Every 30s, it **optimistically unchokes** 1 random peer to bootstrap newcomers and discover faster partners (game theory against free-riders).
+<!--ID: 1726000030-->
+

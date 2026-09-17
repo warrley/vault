@@ -533,3 +533,36 @@ Yes! We have fully covered all concepts from the **Application Architectures** s
   $$D_{p2p} = \max\left\{ \frac{15{,}000}{30}, \; \frac{15{,}000}{2}, \; \frac{1{,}000 \cdot 15{,}000}{30 + 1{,}000 \cdot 1} \right\} = \max\{500, \; 7{,}500, \; 14{,}563\} = \mathbf{14{,}563\text{ s}} \approx 4 \text{ hours}$$
 
 Would you like me to generate/save an atomic markdown note for this in your Obsidian vault, or move to the next topic?
+
+
+> [!quote] YOU
+
+create the appropriate notes
+
+
+> [!abstract] PI
+
+The modular notes and review flashcards have been created and linked in your Obsidian vault:
+
+---
+
+### Created & Updated Files
+
+1. **New Atomic Sub-Note:**
+   - **File:** `study/computer_science/networks/atomics/Architecture - Application Architectures and P2P File Distribution.md`
+   - **Contents:**
+     - Orthogonal separation: Indexing/Discovery vs. Data Transfer.
+     - Client-Server properties and formal derivation of $D_{cs} \ge \max\left\{ \frac{N \cdot F}{u_s}, \frac{F}{d_{\min}} \right\} = O(N)$.
+     - Hybrid P2P (Napster) architecture, mechanisms, and the 3 fatal flaws (SPOF, control bottleneck, legal vulnerability).
+     - Pure P2P (Gnutella), Application-Layer Overlay Networks, why IP broadcast cannot cross routers, limited-scope query flooding with TTL, and reverse-path `QueryHit`.
+     - Hierarchical P2P (KaZaA / FastTrack) exploiting heterogeneity via Superpeers.
+     - Formal proof of P2P Self-Scalability: $D_{p2p} \ge \max\left\{ \frac{F}{u_s}, \frac{F}{d_{\min}}, \frac{N \cdot F}{u_s + \sum u_i} \right\} \xrightarrow{N \to \infty} O(1)$.
+     - BitTorrent mechanisms: Chunks, Rarest-First scheduling, and Tit-for-Tat / Optimistic Unchoking game theory.
+
+2. **Updated Hub/Synthesis Note:**
+   - **File:** `study/computer_science/networks/02-application-layer.md`
+   - Added **Section G (Application Architectures & P2P File Distribution)** with transcluded takeaways (`![[Architecture - Application Architectures and P2P File Distribution#Summary]]`) and bidirectional parent links.
+
+3. **Updated Flashcards Deck:**
+   - **File:** `study/computer_science/networks/flashcards/flashcards-02-application-layer.md`
+   - Added **Section 5 (Cards 24 to 30)** covering exact formulas ($D_{cs}$ vs $D_{p2p}$), Napster flaws, overlay network fundamentals, Gnutella flooding/TTL, Superpeers, and BitTorrent Tit-for-Tat.
