@@ -109,11 +109,9 @@ graph TD
 
 Podemos iniciar a construção a partir da **Verdade 1 e do Modelo Cliente-Servidor**?
 
-
 > [!quote] YOU
 
 in english, please, proceed
-
 
 > [!abstract] PI
 
@@ -163,7 +161,6 @@ $$\text{For large } N, \quad \frac{N \cdot F}{u_s} \gg \frac{F}{d_{\min}} \impli
 
 Let's verify this mechanism with a quick check:
 
-
 > [!question] Quiz
 > If the number of clients $N$ increases from 10 to 40, what happens to the minimum distribution time $D_{cs}$?
 >
@@ -174,13 +171,11 @@ Let's verify this mechanism with a quick check:
 > 3. The distribution time increases by a factor of 16
 > 4. The distribution time remains exactly the same
 
-
 > [!success] Quiz — correct ✓
 > Your answer: 1. The distribution time increases by a factor of 4
 > Correct answer: 1
 >
 > For $N=10$, $N F / u_s = (10 \cdot 100 \cdot 8) / 20 = 400\text{ s}$, while $F / d = (100 \cdot 8) / 5 = 160\text{ s}$. The bottleneck is the server upload ($400\text{ s}$). When $N$ increases from 10 to 40 ($4\times$), $N F / u_s = 1600\text{ s}$, which is exactly $4\times$ longer ($1600 / 400 = 4$).
-
 
 > [!abstract] PI
 
@@ -232,7 +227,6 @@ While Napster eliminated the server *data upload* bottleneck, centralizing the *
 
 Let's test this mechanism before moving to how Gnutella eliminated the central server entirely:
 
-
 > [!question] Quiz
 > From a technical scalability perspective, what caused the central server bottleneck in Napster if audio files were transferred directly between peers?
 >
@@ -243,13 +237,11 @@ Let's test this mechanism before moving to how Gnutella eliminated the central s
 > 3. The central server memory saturated from buffering transferred file chunks
 > 4. TCP ACK packets for data streams were mandated to transit the central server
 
-
 > [!success] Quiz — correct ✓
 > Your answer: 2. The aggregate volume of search queries and user state updates saturated the central server
 > Correct answer: 2
 >
 > Every search query, user login, user logout, and file list update had to be processed by the central server. While it did not handle the heavy audio payload, the aggregate control signaling (database lookups and churn updates) scaled with the number of users, causing a central processing and control-bandwidth bottleneck.
-
 
 > [!abstract] PI
 
@@ -310,7 +302,6 @@ While Gnutella is completely decentralized and resilient to censorship/failures,
 
 Let's test this mechanism before we look at how KaZaA solved this flooding problem:
 
-
 > [!question] Quiz
 > What two essential mechanisms prevent Gnutella query messages from looping indefinitely or flooding the entire global Internet forever?
 >
@@ -321,13 +312,11 @@ Let's test this mechanism before we look at how KaZaA solved this flooding probl
 > 3. Unique Message IDs to suppress duplicates and a decremented TTL field
 > 4. Layer 3 router filtering of duplicate application payload packets
 
-
 > [!success] Quiz — correct ✓
 > Your answer: 3. Unique Message IDs to suppress duplicates and a decremented TTL field
 > Correct answer: 3
 >
 > To prevent routing loops and endless propagation, each query carries a globally unique Message ID (which peers cache to drop duplicates) and a TTL (Time-To-Live) field that is decremented at each hop; when TTL reaches 0, the message is discarded.
-
 
 > [!abstract] PI
 
@@ -375,12 +364,145 @@ In Gnutella, every node was treated equally. A user on a slow $56\text{ kbps}$ d
 Let's test this concept with a quick check:
 
 
-> [!question] Quiz
-> What is the primary operational benefit of the Superpeer architecture over Gnutella's flat P2P model?
->
-> Analyzing the division of labor between superpeers and ordinary peers in a hierarchical P2P network.
->
-> 1. It guarantees global $O(1)$ deterministic search lookups for all files
-> 2. It isolates low-bandwidth edge nodes from participating in query forwarding
-> 3. It forces all data transfer connections to use stateless UDP streams
-> 4. It routes application messages using hardware MAC addresses across routers
+> [!quote] YOU
+
+where is the check quiz?
+
+
+> [!abstract] PI
+
+It should appear as an interactive prompt in your terminal interface! 
+
+Here is the question for Step 4:
+
+---
+
+### Quiz: Hierarchical P2P (Superpeers)
+
+**Question:** What is the primary operational benefit of the Superpeer architecture (KaZaA) over Gnutella's flat P2P model?
+
+- **1.** It isolates low-bandwidth edge nodes from participating in query forwarding *(Ordinary peers offload indexing and search forwarding to high-capacity superpeers, preventing edge link saturation)*
+- **2.** It forces all data transfer connections to use stateless UDP streams
+- **3.** It guarantees global $O(1)$ deterministic search lookups for all files
+- **4.** It routes application messages using hardware MAC addresses across routers
+
+---
+
+*(You can select your answer in the interactive widget or simply reply with the number/text here!)*
+
+
+> [!quote] YOU
+
+I cant select in terminal, but the answer is 1
+
+
+> [!abstract] PI
+
+Spot on! Option **1** is exactly right: hierarchical P2P insulates resource-constrained edge devices from the heavy control plane, confining search floods strictly to the superpeer backbone.
+
+---
+
+### Step 5: Mathematical Modeling of P2P File Distribution ($D_{p2p}$)
+
+Now let's derive the formal lower bound for file distribution time in P2P and prove why P2P achieves **self-scalability**, directly following Kurose & Ross.
+
+#### 1. Setup
+- File of size $F$ bits.
+- $N$ peers who want to receive the file.
+- Server upload capacity: $u_s$.
+- Peer $i$ has upload capacity $u_i$ and download capacity $d_i$.
+- Minimum client download capacity: $d_{\min} = \min \{d_1, d_2, \dots, d_N\}$.
+
+---
+
+#### 2. The Three Independent Lower Bounds
+
+1. **Server Initial Seed Constraint:**
+   The server does not need to send $N$ copies. It only needs to push **at least one copy of each bit** of the file into the P2P swarm (from there, peers replicate the bits among themselves):
+   $$D_{p2p} \ge \frac{F}{u_s}$$
+
+2. **Client Minimum Download Constraint:**
+   The peer with the slowest download link ($d_{\min}$) must still receive all $F$ bits:
+   $$D_{p2p} \ge \frac{F}{d_{\min}}$$
+
+3. **Total System Aggregate Upload Capacity:**
+   The total number of bits that all $N$ peers must collectively receive is $N \cdot F$.
+   The total rate at which the entire system (server + all $N$ peers) can supply bits is $u_s + \sum_{i=1}^N u_i$.
+   Therefore, the system cannot distribute $N \cdot F$ bits faster than:
+   $$D_{p2p} \ge \frac{N \cdot F}{u_s + \sum_{i=1}^N u_i}$$
+
+---
+
+#### 3. The P2P Distribution Lower Bound Formula
+Combining all three physical bounds:
+
+$$D_{p2p} \ge \max\left\{ \frac{F}{u_s}, \; \frac{F}{d_{\min}}, \; \frac{N \cdot F}{u_s + \sum_{i=1}^N u_i} \right\}$$
+
+---
+
+#### 4. The Mathematical Proof of Self-Scalability
+To see the dramatic contrast between Client-Server and P2P, consider the case where all peers have the same upload rate $u$ ($u_i = u$ for all $i$):
+
+$$\text{Term 3: } \frac{N \cdot F}{u_s + N \cdot u}$$
+
+Take the limit as $N \to \infty$:
+$$\lim_{N \to \infty} \frac{N \cdot F}{u_s + N \cdot u} = \lim_{N \to \infty} \frac{F}{\frac{u_s}{N} + u} = \frac{F}{u}$$
+
+$$\begin{array}{l|l|l}
+\textbf{Architecture} & \textbf{Distribution Time Lower Bound} & \textbf{Asymptotics as } N \to \infty \\
+\hline
+\textbf{Client-Server} & D_{cs} \ge \max\left\{ \frac{N \cdot F}{u_s}, \; \frac{F}{d_{\min}} \right\} & \boldsymbol{O(N)} \text{ (Linear growth)} \\
+\hline
+\textbf{Peer-to-Peer} & D_{p2p} \ge \max\left\{ \frac{F}{u_s}, \; \frac{F}{d_{\min}}, \; \frac{N \cdot F}{u_s + N \cdot u} \right\} & \boldsymbol{O(1)} \text{ (Bounded by a constant!)}
+\end{array}$$
+
+```
+Distribution
+   Time D
+     ^
+     |                                /  Client-Server D_cs = O(N)
+     |                              /
+     |                            /
+     |                          /
+     |  -----------------------+------------------- P2P D_p2p = O(1)
+     | /                       |
+     |/________________________|____________________> Number of Peers (N)
+```
+
+---
+
+### Step 6: Practical P2P Engineering: BitTorrent
+
+How does a practical protocol like **BitTorrent** realize this theoretical limit?
+
+1. **Chunking:**
+   - A file is split into equal-sized chunks (typically $256\text{ KB}$).
+   - Peers download and upload chunks concurrently across multiple neighbors.
+2. **Rarest First Strategy:**
+   - Peers exchange bitfields (lists of chunks they have).
+   - A peer always requests the chunks that are **rarest** across its neighbors first.
+   - *Why?* It prevents rare chunks from disappearing if the original seeder leaves, and maximizes trading diversity so every peer has something others want.
+3. **Tit-for-Tat Incentive (Choking / Unchoking):**
+   - **Top 4 Peers:** Every 10 seconds, Alice measures the download rate she gets from all neighbors and unchokes (sends data to) the 4 peers giving her data fastest.
+   - **Optimistic Unchoking:** Every 30 seconds, Alice picks **1 random peer** to send chunks to for free.
+     - *Why?* This allows new peers (who have no data yet) to bootstrap into the network and lets Alice discover if a new neighbor can upload faster than her current top 4.
+   - *Game Theory Result:* Defeats **free-riders** (leeches) who download without uploading.
+
+---
+
+### Practice Exercise (Directly from Kurose / Exam Style)
+
+Consider distributing a file of size $F = 15\text{ GB}$ ($15{,}000\text{ MB}$) from a server to $N = 1{,}000$ peers:
+- Server upload rate: $u_s = 30\text{ MB/s}$
+- Each peer has:
+  - Download rate: $d = 2\text{ MB/s}$
+  - Upload rate: $u = 1\text{ MB/s}$
+
+What are the minimum distribution times $D_{cs}$ and $D_{p2p}$?
+
+- **A.** $D_{cs} = 500{,}000\text{ s} \quad$ and $\quad D_{p2p} = 7{,}500\text{ s}$
+- **B.** $D_{cs} = 7{,}500\text{ s} \quad$ and $\quad D_{p2p} = 15{,}000\text{ s}$
+- **C.** $D_{cs} = 500{,}000\text{ s} \quad$ and $\quad D_{p2p} = 14{,}563\text{ s}$
+- **D.** $D_{cs} = 15{,}000\text{ s} \quad$ and $\quad D_{p2p} = 500\text{ s}$
+
+Which option is correct? (Reply with **A**, **B**, **C**, or **D**).
