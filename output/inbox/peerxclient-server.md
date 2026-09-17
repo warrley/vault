@@ -242,3 +242,81 @@ Let's test this mechanism before moving to how Gnutella eliminated the central s
 > 2. The aggregate volume of search queries and user state updates saturated the central server
 > 3. The central server memory saturated from buffering transferred file chunks
 > 4. TCP ACK packets for data streams were mandated to transit the central server
+
+
+> [!success] Quiz — correct ✓
+> Your answer: 2. The aggregate volume of search queries and user state updates saturated the central server
+> Correct answer: 2
+>
+> Every search query, user login, user logout, and file list update had to be processed by the central server. While it did not handle the heavy audio payload, the aggregate control signaling (database lookups and churn updates) scaled with the number of users, causing a central processing and control-bandwidth bottleneck.
+
+
+> [!abstract] PI
+
+### Step 3: Pure P2P & Overlay Networks (Gnutella)
+
+#### 1. Motivation: Eliminating the Central Target
+To eliminate both the Single Point of Failure (SPOF) and legal vulnerability, **Gnutella (2000)** completely removed the central directory. There are no dedicated servers: every node acts as both a client and a server (a **servent**).
+
+---
+
+#### 2. The Core Mechanism: Application-Layer Overlay Network
+A distributed application cannot rely on network-layer (IP) broadcast because **Internet routers drop IP broadcast packets** to prevent global network storms.
+
+Instead, P2P applications construct an **Overlay Network (Rede de Sobreposição)**:
+
+```
+  Logical Overlay Graph (Layer 7)          Physical IP Network (Layer 3)
+      [ Peer A ] --- (TCP) --- [ Peer B ]          [A] --- (Router 1) --- [B]
+          \                       /                     \      /
+           (TCP)             (TCP)                       (Router 2)
+            \                   /                             |
+             ---> [ Peer C ] <---                            [C]
+```
+
+- **Nodes:** End-system hosts running the Gnutella software.
+- **Edges:** Virtual links formed by persistent, direct **TCP connections** between peers.
+- If Peer A is connected via TCP to Peer B, Peer B is Alice's **logical neighbor**, even if they are physically separated by 15 intermediate IP routers.
+
+---
+
+#### 3. Discovery Protocol: Limited-Scope Flooding & Reverse Path
+When Alice wants to search for a file:
+
+```
+[ Alice ] --(Query, TTL=7)--> [ Node 1 ] --(Query, TTL=6)--> [ Node 2 (Has File!) ]
+    ^                             |                                 |
+    |                             v                                 |
+    |                       [ Node 3 (TTL=6) ]                      |
+    |                                                               |
+    +<======== (QueryHit returns along the reverse path) <==========+
+```
+
+1. **Query Flooding:** Alice sends a `Query` message with a **Time-To-Live (TTL)** field (typically set to 5–7) to all her overlay neighbors over their existing TCP links.
+2. **Forwarding & TTL Decrement:** Each neighbor checks its local disk. If it doesn't have the file, it decrements $\text{TTL}$ by 1 and forwards the query to all its other overlay neighbors. If $\text{TTL} = 0$, the query is dropped.
+3. **QueryHit & Reverse Path Forwarding:** When a peer finds a matching file, it creates a `QueryHit` containing the file metadata, file size, IP address, and port. This message travels **backwards along the exact reverse path** of TCP links that brought the query to it.
+4. **Direct Download:** Alice extracts the file provider's IP/port from the `QueryHit` and opens a direct HTTP/TCP connection to transfer the file payload.
+
+---
+
+#### 4. The Trade-off: Exponential Signaling Overhead
+While Gnutella is completely decentralized and resilient to censorship/failures, flooding is inherently expensive:
+
+- If each peer connects to $d$ neighbors (degree $d$) and the query travels $\text{TTL} = k$ hops, the number of generated messages scales exponentially:
+  $$\text{Messages per Query} \approx O(d^k)$$
+- With millions of users typing searches, the overlay network becomes saturated with control queries—consuming uplink capacity simply passing search messages for other people.
+
+---
+
+Let's test this mechanism before we look at how KaZaA solved this flooding problem:
+
+
+> [!question] Quiz
+> What two essential mechanisms prevent Gnutella query messages from looping indefinitely or flooding the entire global Internet forever?
+>
+> In a pure P2P network using flooding, cycles in the overlay graph and infinite propagation could easily crash the network if not controlled.
+>
+> 1. Central coordinator kill signals broadcast to all peers
+> 2. DNS root server validation of shortest overlay path
+> 3. Unique Message IDs to suppress duplicates and a decremented TTL field
+> 4. Layer 3 router filtering of duplicate application payload packets
