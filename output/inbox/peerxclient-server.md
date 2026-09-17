@@ -506,3 +506,30 @@ What are the minimum distribution times $D_{cs}$ and $D_{p2p}$?
 - **D.** $D_{cs} = 15{,}000\text{ s} \quad$ and $\quad D_{p2p} = 500\text{ s}$
 
 Which option is correct? (Reply with **A**, **B**, **C**, or **D**).
+
+
+> [!quote] YOU
+
+we finished?
+
+
+> [!abstract] PI
+
+Yes! We have fully covered all concepts from the **Application Architectures** section in slide **`rc-03`** and the **Kurose & Ross** textbook:
+
+1. **Client-Server Architecture:** Centralized model, $O(N)$ linear scaling, and its upload bottleneck.
+2. **Hybrid P2P (Napster):** Centralized directory lookup + decentralized data transfer, and why single point of failure (SPOF) and legal targets brought it down.
+3. **Pure P2P (Gnutella):** Overlay networks, limited-scope query flooding with TTL, reverse-path `QueryHit`, and why IP broadcast isn't used.
+4. **Hierarchical P2P (KaZaA):** Superpeers exploiting node heterogeneity to insulate slow edge links.
+5. **Mathematical Modeling of Distribution Time ($D_{cs}$ vs $D_{p2p}$):** Formal proof of P2P self-scalability ($O(1)$ asymptotic bound).
+6. **BitTorrent:** Chunks, Rarest-First scheduling, and Tit-for-Tat game theory.
+
+---
+
+*(For the final practice question, the answer was **C**)*:
+- **Client-Server:**
+  $$D_{cs} = \max\left\{ \frac{1{,}000 \cdot 15{,}000}{30}, \; \frac{15{,}000}{2} \right\} = \max\{500{,}000\text{ s}, \; 7{,}500\text{ s}\} = \mathbf{500{,}000\text{ s}} \approx 5.8 \text{ days}$$
+- **P2P:**
+  $$D_{p2p} = \max\left\{ \frac{15{,}000}{30}, \; \frac{15{,}000}{2}, \; \frac{1{,}000 \cdot 15{,}000}{30 + 1{,}000 \cdot 1} \right\} = \max\{500, \; 7{,}500, \; 14{,}563\} = \mathbf{14{,}563\text{ s}} \approx 4 \text{ hours}$$
+
+Would you like me to generate/save an atomic markdown note for this in your Obsidian vault, or move to the next topic?
