@@ -320,3 +320,67 @@ Let's test this mechanism before we look at how KaZaA solved this flooding probl
 > 2. DNS root server validation of shortest overlay path
 > 3. Unique Message IDs to suppress duplicates and a decremented TTL field
 > 4. Layer 3 router filtering of duplicate application payload packets
+
+
+> [!success] Quiz — correct ✓
+> Your answer: 3. Unique Message IDs to suppress duplicates and a decremented TTL field
+> Correct answer: 3
+>
+> To prevent routing loops and endless propagation, each query carries a globally unique Message ID (which peers cache to drop duplicates) and a TTL (Time-To-Live) field that is decremented at each hop; when TTL reaches 0, the message is discarded.
+
+
+> [!abstract] PI
+
+### Step 4: Hierarchical P2P & Exploiting Heterogeneity (KaZaA)
+
+#### 1. Motivation: The Heterogeneity Problem
+In Gnutella, every node was treated equally. A user on a slow $56\text{ kbps}$ dial-up connection with high latency had to route queries for high-speed fiber nodes. This created severe network bottlenecks.
+
+**KaZaA (FastTrack protocol, 2001)** introduced a tiered structure by exploiting the physical reality that **peers are inherently heterogeneous** in bandwidth, CPU, and uptime.
+
+---
+
+#### 2. The Superpeer (Group Leader) Architecture
+
+```
+       [ Superpeer A ] <==== (Inter-Superpeer Overlay) ====> [ Superpeer B ]
+        /     |     \                                         /     |     \
+      (TCP) (TCP)  (TCP)                                    (TCP) (TCP)  (TCP)
+      /       |       \                                     /       |       \
+   [Node 1] [Node 2] [Node 3]                            [Node 4] [Node 5] [Node 6]
+   (Ordinary Peers assigned to A)                        (Ordinary Peers assigned to B)
+```
+
+1. **Ordinary Peers:**
+   - Low-bandwidth or transient nodes.
+   - Each ordinary peer connects to **exactly one Superpeer** and uploads its file list to it (acting like a local Napster client).
+   - Ordinary peers **never forward queries** or participate in the overlay routing.
+2. **Superpeers (Supernodes):**
+   - High-bandwidth, high-uptime hosts with public IP addresses (dynamically promoted).
+   - A Superpeer acts as a **mini-Napster directory** for all its attached ordinary peers.
+   - Superpeers interconnect with each other to form a high-speed backbone overlay.
+
+---
+
+#### 3. How Search Works in KaZaA
+1. An ordinary peer sends its search query **only to its designated Superpeer**.
+2. The Superpeer searches its local database (indexing all its assigned children).
+3. If not resolved, the Superpeer floods the query **only across the Superpeer backbone network**.
+4. When a match is found, the downloading peer connects **directly via P2P** to the file provider to transfer the data.
+
+**Key Advantage:** It combines the high query speed of centralized indexing (Napster) with the robustness and lack of a single target of pure P2P (Gnutella), drastically reducing query traffic on constrained edge links.
+
+---
+
+Let's test this concept with a quick check:
+
+
+> [!question] Quiz
+> What is the primary operational benefit of the Superpeer architecture over Gnutella's flat P2P model?
+>
+> Analyzing the division of labor between superpeers and ordinary peers in a hierarchical P2P network.
+>
+> 1. It guarantees global $O(1)$ deterministic search lookups for all files
+> 2. It isolates low-bandwidth edge nodes from participating in query forwarding
+> 3. It forces all data transfer connections to use stateless UDP streams
+> 4. It routes application messages using hardware MAC addresses across routers
