@@ -173,3 +173,72 @@ Let's verify this mechanism with a quick check:
 > 2. The distribution time increases by a factor of 2
 > 3. The distribution time increases by a factor of 16
 > 4. The distribution time remains exactly the same
+
+
+> [!success] Quiz — correct ✓
+> Your answer: 1. The distribution time increases by a factor of 4
+> Correct answer: 1
+>
+> For $N=10$, $N F / u_s = (10 \cdot 100 \cdot 8) / 20 = 400\text{ s}$, while $F / d = (100 \cdot 8) / 5 = 160\text{ s}$. The bottleneck is the server upload ($400\text{ s}$). When $N$ increases from 10 to 40 ($4\times$), $N F / u_s = 1600\text{ s}$, which is exactly $4\times$ longer ($1600 / 400 = 4$).
+
+
+> [!abstract] PI
+
+### Step 2: The Two Orthogonal Problems & Hybrid P2P (Napster)
+
+#### 1. The Fundamental Decomposition
+To bypass the $O(N)$ server upload bottleneck, distributed systems decompose file distribution into **two independent problems**:
+
+$$\begin{aligned}
+\text{1. } &\textbf{Indexing / Discovery Problem:} \quad &\text{"Who holds the file } X \text{ (what is their IP address)?"} \\
+\text{2. } &\textbf{Data Transfer Problem:} \quad &\text{"How do we stream the payload bits from host } A \text{ to host } B\text{?"}
+\end{aligned}$$
+
+---
+
+#### 2. The Hybrid Architecture: Napster (1999)
+Napster recognized that **data transfer** is the heavy consumer of bandwidth, while **indexing queries** are lightweight text messages.
+
+```
+                  [ Central Server ]
+                 (Maintains File -> IP)
+                    /              \
+         1. Query  /                \  1. Register
+          "Hey Jude"                 \    Files
+                  /                    \
+                 v                      v
+           [ Alice (Client) ] =======> [ Bob (Peer) ]
+                             2. Direct P2P
+                             TCP Download
+```
+
+1. **Centralized Indexing:**
+   - When a peer connects, it uploads its current IP address and list of shared file names to Napster's central database.
+   - When Alice searches for `"Hey Jude"`, she sends a single query to the central server.
+   - The central server performs an internal database lookup and returns Bob’s IP address.
+2. **Decentralized Data Transfer (P2P):**
+   - Alice establishes a direct TCP connection to Bob's IP and downloads the file directly from Bob. The central server never touches the MP3 data bits.
+
+---
+
+#### 3. The 3 Fatal Flaws of Centralized Indexing
+While Napster eliminated the server *data upload* bottleneck, centralizing the *index* left three critical vulnerabilities:
+
+1. **Single Point of Failure (SPOF):** If the central server crashes or its access link goes down, the entire network is paralyzed.
+2. **Signaling & Maintenance Bottleneck:** Handling millions of simultaneous join/leave updates (peer churn) and real-time search queries creates a processing bottleneck at the central directory.
+3. **Legal Vulnerability (Centralized Target):** Because a single company owned and operated the central index pointing to copyrighted files, the courts issued an injunction against Napster's central servers, shutting down the entire network in 2001.
+
+---
+
+Let's test this mechanism before moving to how Gnutella eliminated the central server entirely:
+
+
+> [!question] Quiz
+> From a technical scalability perspective, what caused the central server bottleneck in Napster if audio files were transferred directly between peers?
+>
+> Even though file payloads were transferred directly peer-to-peer, Napster's central server architecture still suffered from scalability issues as the user base exploded into tens of millions.
+>
+> 1. Core routers dropped TCP handshakes due to symmetric routing constraints
+> 2. The aggregate volume of search queries and user state updates saturated the central server
+> 3. The central server memory saturated from buffering transferred file chunks
+> 4. TCP ACK packets for data streams were mandated to transit the central server
