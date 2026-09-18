@@ -81,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.42047119140625,
-    "collapsed": true
+    "width": 269.42047119140625
   },
   "right": {
     "id": "be969ee258392cf9",
@@ -248,7 +247,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "71eac90251d3e315",
+  "active": "95f8adec403d8901",
   "lastOpenFiles": [
     "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
     "study/computer_science/networks/atomics/Architecture - Application Architectures and P2P File Distribution.md",
