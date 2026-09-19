@@ -1,0 +1,342 @@
+> [!quote] YOU
+
+now can we start in transport layer? uses the 4s/computer_network/slides/rc-04-CamadaTransporte.pdf and the kurouse book in ../books
+
+> [!question] Quiz
+> What fundamental distinction defines the boundary between the Transport Layer and the Network Layer?
+>
+> Starting Phase 1 (Probe) to map your baseline before we plan and dive into the Transport Layer (Kurose Chapter 3 / Slide 04).
+>
+> 1. Transport layer provides packet routing across autonomous systems; network layer provides socket management inside hosts.
+> 2. Transport layer provides logical communication between processes; network layer provides physical bit transmission across links.
+> 3. Transport layer provides logical communication between processes; network layer provides logical communication between hosts.
+> 4. Transport layer provides logical communication between hosts; network layer provides logical communication between routers.
+
+> [!success] Quiz — correct ✓
+> Your answer: 3. Transport layer provides logical communication between processes; network layer provides logical communication between hosts.
+> Correct answer: 3
+>
+> The transport layer provides logical communication between application processes running on different hosts, whereas the network layer provides logical communication between the hosts themselves.
+
+> [!question] Quiz
+> Which fields does a host use to demultiplex an incoming TCP segment to the correct socket?
+>
+> Probing demultiplexing mechanisms in the transport layer.
+>
+> 1. By using the 2-tuple: Destination Port and the connection's Sequence Number.
+> 2. By using the 4-tuple: Source IP, Source Port, Destination IP, and Destination Port.
+> 3. By using the 3-tuple: Source IP, Destination IP, and Destination Port.
+> 4. By using the 2-tuple: Destination IP and Destination Port only.
+
+> [!question] Quiz — I don't know
+> Your answer: I don't know
+> Correct answer: 2
+>
+> A TCP socket is uniquely identified by a 4-tuple: (Source IP address, Source port number, Destination IP address, Destination port number). When a TCP segment arrives, the OS uses all four fields to demultiplex the segment to the correct socket. (In contrast, UDP demultiplexing uses only the destination IP and destination port).
+
+> [!question] Quiz
+> What is the fundamental difference between Flow Control and Congestion Control?
+>
+> Probing the concepts of Flow Control vs Congestion Control.
+>
+> 1. Flow control adjusts the transmission window based on network loss; congestion control manages sender-to-receiver packet reordering.
+> 2. Flow control prevents packet loss in intermediate routers; congestion control manages application buffer sizes at the sender.
+> 3. Flow control prevents overflowing the receiver buffer; congestion control prevents overwhelming the network links and routers.
+> 4. Flow control manages TCP connection handshakes; congestion control enforces reliable delivery via acknowledgments.
+
+> [!success] Quiz — correct ✓
+> Your answer: 3. Flow control prevents overflowing the receiver buffer; congestion control prevents overwhelming the network links and routers.
+> Correct answer: 3
+>
+> Flow control is an end-to-end mechanism that prevents the sender from overflowing the specific receiver's buffer. Congestion control prevents network routers and links from being overwhelmed by traffic from all sending hosts combined.
+
+> [!question] Quiz
+> How do Go-Back-N and Selective Repeat differ when handling out-of-order packets at the receiver?
+>
+> Probing pipelined reliable data transfer mechanisms (GBN vs SR).
+>
+> 1. Go-Back-N buffers out-of-order packets; Selective Repeat requests retransmission of only the entire window.
+> 2. Go-Back-N retransmits only corrupted packets; Selective Repeat retransmits all packets starting from the lost one.
+> 3. Go-Back-N discards out-of-order packets; Selective Repeat buffers out-of-order packets and acknowledges each independently.
+> 4. Go-Back-N uses negative acknowledgments (NAKs); Selective Repeat relies exclusively on sender timeout expirations.
+
+> [!question] Quiz — I don't know
+> Your answer: I don't know
+> Correct answer: 3
+>
+> In Go-Back-N, the receiver discards all out-of-order packets and only sends cumulative ACKs for correctly received in-order packets. In Selective Repeat, the receiver individually acknowledges and buffers out-of-order packets until missing packets arrive to fill the gap.
+
+> [!question] Question
+> How would you like to structure our journey through the Transport Layer?
+>
+> We mapped your edges: strong high-level grasp of host vs. process and flow vs. congestion, with clear frontiers at socket demuxing, RDT evolution, and TCP internals.
+>
+> 1. Complete Systematic Walk-through (Recommended)
+> 2. Focus on RDT, TCP Mechanisms & Congestion Control
+> 3. Problem-Set & Exercise Driven
+
+> [!example] Answer
+> 1. Complete Systematic Walk-through (Recommended)
+
+> [!abstract] PI
+
+### Transport Layer Roadmap & Dependency Plan
+
+We are going to build the Transport Layer (Kurose Chapter 3 / Slide 04) from first principles. Nothing will appear out of nowhere: every mechanism (ports, sequence numbers, checksums, sliding windows, congestion windows) will be motivated by a concrete failure mode or physical constraint of computer networks.
+
+---
+
+### The Approach
+
+1. **Multiplexing & Demultiplexing**: Starting from the reality that a machine runs dozens of network processes over a single physical network interface. We will discover why port numbers exist and why UDP needs only a 2-tuple while TCP strictly requires a 4-tuple.
+2. **UDP & Checksum**: The minimal transport protocol. We will analyze why applications choose "unreliable" transport and how the Internet 1's-complement checksum detects bit corruption.
+3. **Principles of Reliable Data Transfer (RDT)**: We will build a reliable protocol from scratch over an unreliable network layer ($rdt 1.0 \to 2.0 \to 2.1 \to 2.2 \to 3.0$), discovering step-by-step why we need ACKs, sequence numbers, timers, and retransmissions.
+4. **Pipelining (Go-Back-N vs. Selective Repeat)**: Why stop-and-wait destroys link utilization, and how sliding windows solve it through cumulative ACKs (GBN) vs. selective buffering (SR).
+5. **TCP Internals**: Moving from abstract RDT to real-world TCP: byte-stream sequence numbering, 3-way handshake, connection teardown, RTT estimation, and Flow Control ($rwnd$).
+6. **TCP Congestion Control**: How end systems detect and react to network bottleneck collapse using Additive-Increase Multiplicative-Decrease (AIMD), Slow Start, Fast Retransmit, and Fast Recovery (TCP Tahoe vs. Reno).
+
+---
+
+### The Dependency Map
+
+```mermaid
+flowchart TD
+    UT1["Unconditional Truth: Network Layer is Best-Effort (Loss, Delay, Corruption)"]
+    UT2["Unconditional Truth: Multiple Processes Run Concurrently on a Host"]
+    
+    N1["Node 1: Multiplexing & Demux (Port Numbers, 2-Tuple vs 4-Tuple)"]
+    N2["Node 2: UDP & Error Detection (Checksum Algorithm)"]
+    N3["Node 3: Reliable Data Transfer (rdt 1.0 → 3.0 State Machines)"]
+    N4["Node 4: Pipelined Protocols (Utilization, GBN vs Selective Repeat)"]
+    N5["Node 5: TCP Mechanics (Byte-Stream Seq/ACK, 3-Way Handshake, Flow Control)"]
+    N6["Node 6: TCP Congestion Control (AIMD, Slow Start, Tahoe vs Reno)"]
+
+    UT2 --> N1
+    N1 --> N2
+    UT1 --> N3
+    N3 --> N4
+    N4 --> N5
+    N1 --> N5
+    N5 --> N6
+```
+
+---
+
+Ready to begin with **Node 1: Multiplexing and Demultiplexing**? Give the go-ahead and we'll dive right in.
+
+---
+> [!tip] 💬 English Polish
+> - **Original:** *"now can we start in transport layer? uses the 4s/computer_network/slides/rc-04-CamadaTransporte.pdf and the kurouse book in ../books"*
+> - **More Natural:** *"Can we start with the transport layer now? Let's use the slides in `...` and the Kurose book in `...`."*
+> - **Quick Tips:**
+>   - Use **"start with [topic]"** or **"move on to [topic]"** rather than *"start in [topic]"*.
+>   - In imperative suggestions, use **"Let's use..."** or the participle **"using..."** instead of *"uses..."*.
+>   - Author's name is **Kurose** (James Kurose).
+
+
+> [!quote] YOU
+
+right, proceed
+
+
+> [!abstract] PI
+
+### Node 1: Multiplexing and Demultiplexing
+
+#### 1. Motivation: The Host-to-Process Gap
+The **Network Layer** (IP protocol) provides *host-to-host* communication. When an IP datagram arrives at your machine, the network layer has successfully delivered it to the correct computer using the destination **IP address**.
+
+However, a modern operating system runs hundreds of network-aware processes simultaneously:
+- A browser with tabs open to YouTube and GitHub.
+- An active SSH session in your terminal.
+- A background Spotify stream and a local database server.
+
+When an IP datagram arrives carrying a chunk of bytes, the operating system faces a critical question: **Which specific process does this chunk belong to?**
+
+---
+
+#### 2. The Core Mechanism: Sockets and Port Numbers
+
+Every process communicating over the network interacts through an abstraction called a **Socket** (the software door between the application layer and the transport layer).
+
+To deliver data to the correct door, the transport layer assigns every socket an identifier called a **Port Number**:
+- Port numbers are **16-bit integers**, ranging from $0$ to $65535$ ($2^{16} - 1$).
+  - **Well-known ports** ($0$ to $1023$): Reserved for standard protocols (e.g., HTTP: $80$, HTTPS: $443$, SSH: $22$, DNS: $53$).
+  - **Ephemeral / Dynamic ports** ($1024$ to $65535$): Automatically assigned by the OS to client applications when they initiate communication.
+
+```
++-------------------------------------------------------------+
+| SENDER (Multiplexing)                                       |
+|  [App A (port 52100)]    [App B (port 52101)]               |
+|            \                  /                             |
+|             \                /                              |
+|       Gather data + add Port Headers (Transport Layer)      |
+|                      |                                      |
+|             Pass to Network Layer (IP)                      |
++-------------------------------------------------------------+
+                              | (Network transmission)
+                              v
++-------------------------------------------------------------+
+| RECEIVER (Demultiplexing)                                   |
+|             Receive from Network Layer (IP)                 |
+|                      |                                      |
+|       Inspect Port Headers & Route to Sockets               |
+|             /                \                              |
+|            /                  \                             |
+|  [Socket (port 52100)]   [Socket (port 52101)]              |
++-------------------------------------------------------------+
+```
+
+- **Multiplexing (at sender)**: Gathering data chunks from multiple sockets, encapsulating them with transport headers (source/dest ports), and passing the segments down to IP.
+- **Demultiplexing (at receiver)**: Unpacking incoming segments, reading the header fields, and directing each segment's payload to the exact corresponding socket.
+
+---
+
+#### 3. Connectionless (UDP) vs. Connection-Oriented (TCP) Demultiplexing
+
+How the OS matches an incoming segment to a socket depends strictly on the transport protocol:
+
+##### A. UDP Demultiplexing: 2-Tuple
+A UDP socket is identified by only two pieces of information:
+$$\text{UDP Demux Key} = (\text{Destination IP Address},\; \text{Destination Port Number})$$
+
+- If Host $A$ and Host $B$ both send UDP datagrams to Host $C$ on destination port $53$ (DNS), **both datagrams are delivered to the exact same UDP socket** on Host $C$, regardless of where they originated.
+- The receiving application can inspect the segment's *Source IP* and *Source Port* metadata if it needs to know who sent it.
+
+##### B. TCP Demultiplexing: 4-Tuple
+A TCP socket is bound to an active, point-to-point connection identified by a full 4-tuple:
+$$\text{TCP Demux Key} = (\text{Source IP},\; \text{Source Port},\; \text{Destination IP},\; \text{Destination Port})$$
+
+- A TCP server (e.g., a Web server on port $80$) maintains a **welcoming (listening) socket**.
+- When a client initiates a connection, the OS accepts it and creates a **brand-new, dedicated socket** tied uniquely to that 4-tuple.
+- Even if $1000$ different clients connect to the same web server IP on port $80$, the server OS manages $1000$ distinct TCP sockets. Each segment is routed directly to the specific socket holding the state (sequence numbers, buffers, window sizes) for that client.
+
+---
+
+Let's verify this mechanism before moving to UDP and RDT.
+
+
+> [!question] Quiz
+> Host C runs a web server on port 80. Host A sends 2 simultaneous HTTP requests (using ephemeral ports 50001 and 50002) over TCP to Host C:80. Host B also sends 2 simultaneous HTTP requests (using ephemeral ports 50001 and 50002) over TCP to Host C:80. How many distinct TCP sockets exist on Host C to handle these 4 active connections?
+>
+> Testing TCP connection-oriented demultiplexing behavior.
+>
+> 1. The segments are all delivered into a single shared socket listening on port 80.
+> 2. The segments are demultiplexed into 3 sockets because Host B shares a single destination port.
+> 3. The segments from Host A go to one socket, and the segments from Host B go to a second socket (2 sockets total).
+> 4. The segments are demultiplexed into 4 distinct sockets on Host C.
+
+
+> [!warning] Quiz — cancelled
+> (user skipped)
+
+
+> [!question] Question
+> How would you like to proceed?
+>
+> You cancelled the quiz. Would you like to ask a question about multiplexing/demultiplexing, re-try the question, or move directly forward?
+>
+> 1. Proceed to Node 2 (UDP & Checksum) (Recommended)
+> 2. Explain demultiplexing further / Ask a question
+> 3. Re-take the quiz question
+
+
+> [!example] Answer
+> Other: but do you jumps some subjects like transport layer services etc
+
+
+> [!abstract] PI
+
+### Transport-Layer Services & Overview (Kurose §3.1 / Slide 04)
+
+You are completely right to call this out. Let's make sure Section 3.1 (**Transport-Layer Services and Guarantees**) is fully explored and grounded before we get into protocol specifics.
+
+---
+
+### 1. The Core Purpose: Extending Host-to-Host to Process-to-Process
+
+The fundamental job of the transport layer is to provide **logical communication** between application processes running on different hosts:
+- **Logical communication** means that from the application’s perspective, the two processes communicate as if they were directly connected by a dedicated wire, regardless of the physical distance, routers, or link types in between.
+- Transport-layer protocols run **exclusively on the end systems (hosts)**, never on intermediate network routers. Routers in the network core only inspect and forward packets up to the **Network Layer (IP)**.
+
+```
++-------------------+                                   +-------------------+
+| Application Layer |                                   | Application Layer |
++-------------------+                                   +-------------------+
+|  Transport Layer  | <=========== Logical ===========> |  Transport Layer  |
++-------------------+         Communication             +-------------------+
+|   Network Layer   |                                   |   Network Layer   |
++-------------------+           +-----------+           +-------------------+
+|  Link & Physical  | <-------> |  Routers  | <-------> |  Link & Physical  |
++-------------------+           | (L1 - L3) |           +-------------------+
+     Host A                     +-----------+                Host B
+```
+
+---
+
+### 2. The Classic Household Analogy (Kurose)
+
+Kurose introduces a famous analogy to clearly separate the **Transport Layer** from the **Network Layer**:
+
+Imagine two large families living in two different houses:
+- **East Coast House**: 12 kids (Ann, Bob, Chris...)
+- **West Coast House**: 12 cousins (Alice, Bill, Clara...)
+
+Every week, the kids write letters to their cousins:
+1. **The Application Messages**: The letters inside the envelopes.
+2. **The Processes**: The individual kids writing/reading the letters.
+3. **The Hosts**: The two houses.
+4. **The Transport Layer Protocol (e.g., Ann & Bill)**: 
+   - In the East Coast house, **Ann** collects letters from all 12 kids and takes them to the physical mailbox at the front yard.
+   - When mail arrives at the front yard, **Ann** picks up the batch and hands each letter to the specific sibling it is addressed to.
+   - (Bill does the exact same job in the West Coast house).
+5. **The Network Layer Protocol**: The **Postal Service (mail carrier & trucks)**, which only knows how to move mail from *House A's mailbox* to *House B's mailbox*.
+
+> **The Key Takeaway**:
+> - The Postal Service (Network Layer) only delivers between **houses (hosts)**.
+> - Ann and Bill (Transport Layer) deliver between **individual cousins (processes)**.
+> - Even if the postal service does not guarantee letter order or might lose a letter, Ann and Bill could theoretically add numbering or re-send letters to provide a reliable service to the kids.
+
+---
+
+### 3. What the Transport Layer Can and Cannot Guarantee
+
+The services a transport protocol can provide are constrained by the underlying network layer:
+
+#### What the Transport Layer CAN do (even if IP fails to):
+- **Process-level Addressing**: Using port numbers to direct data to specific sockets (Multiplexing / Demultiplexing).
+- **Integrity Checking**: Detecting bit errors caused by electromagnetic interference on links (via Checksums).
+- **Reliable Data Transfer**: Guaranteeing that data arrives with zero bit errors, zero loss, and in exact order (via Sequence Numbers, ACKs, Retransmissions in TCP).
+- **Flow Control**: Preventing a fast sender from overwhelming a slow receiver's memory buffer.
+- **Congestion Control**: Throttling traffic to prevent network-wide collapse of intermediate routers.
+
+#### What the Internet Transport Layer CANNOT guarantee:
+Because the underlying IP network is a packet-switched, best-effort network, neither TCP nor UDP can guarantee:
+1. **Delay / Latency Guarantees**: Neither protocol can guarantee that a segment will arrive within $\le 50\text{ ms}$.
+2. **Bandwidth / Throughput Guarantees**: Neither protocol can reserve a dedicated data rate (e.g., $10\text{ Mbps}$ guaranteed).
+
+---
+
+### 4. The Two Internet Transport Service Models: TCP vs. UDP
+
+| Feature | **UDP** (User Datagram Protocol, RFC 768) | **TCP** (Transmission Control Protocol, RFC 793) |
+| :--- | :--- | :--- |
+| **Connection Model** | **Connectionless** (no handshake, no state) | **Connection-oriented** (3-way handshake, stateful) |
+| **Reliability** | **Unreliable** (best-effort; drops, reordering, duplicates possible) | **Reliable** (in-order byte stream, guaranteed delivery) |
+| **Flow & Congestion Control** | **None** (sends as fast as the app generates) | **Yes** (manages receiver buffer and network congestion) |
+| **Header Overhead** | **8 bytes** (very lightweight) | **20 bytes** minimum (up to 60 bytes with options) |
+| **Typical Use Cases** | DNS, VoIP, Video Streaming, Real-time gaming, DHCP | Web (HTTP/HTTPS), File Transfer (FTP), Email (SMTP), SSH |
+
+---
+
+Now that the conceptual foundations of Section 3.1 are solidly in place, would you like to:
+1. Revisit **Multiplexing/Demultiplexing** (Section 3.2), or
+2. Move straight to **UDP & Checksum calculation** (Section 3.3)?
+
+---
+> [!tip] 💡 English Polish
+> - **Original:** *"but do you jumps some subjects like transport layer services etc"*
+> - **More Natural:** *"Did you skip some topics, like transport layer services?"* or *"Are you jumping over some subjects, such as transport layer services?"*
+> - **Quick Tips:**
+>   - With auxiliary verbs (**do / did / does**), the main verb always stays in its **base form**: *"Did you jump...?"* or *"Do you jump...?"* (never *"do you jumps"*).
+>   - For past actions or omissions, prefer the past tense: *"Did you skip...?"*.

@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "output/inbox/transport_layer.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -81,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 474.1210632324219
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "be969ee258392cf9",
