@@ -340,3 +340,138 @@ Now that the conceptual foundations of Section 3.1 are solidly in place, would y
 > - **Quick Tips:**
 >   - With auxiliary verbs (**do / did / does**), the main verb always stays in its **base form**: *"Did you jump...?"* or *"Do you jump...?"* (never *"do you jumps"*).
 >   - For past actions or omissions, prefer the past tense: *"Did you skip...?"*.
+
+
+> [!quote] YOU
+
+mutiplexing/demutiplexing
+
+
+> [!abstract] PI
+
+### Section 3.2: Multiplexing and Demultiplexing in Depth
+
+Now let's examine exactly how the operating system and transport layer execute **Multiplexing** and **Demultiplexing** at the packet and socket levels.
+
+---
+
+### 1. The Core Data Flow: Sender vs. Receiver
+
+```
+SENDER HOST (Multiplexing)                      RECEIVER HOST (Demultiplexing)
++-------------------------+                     +-------------------------+
+| Process P1 | Process P2 |                     | Process P3 | Process P4 |
+| (Socket 1) | (Socket 2) |                     | (Socket 3) | (Socket 4) |
++------------+------------+                     +------------+------------+
+        \         /                                    ^         ^
+         \       /                                      \       /
+      +-------------+                                +-------------+
+      |  Transport  |  Creates Transport Segments    |  Transport  |  Reads Headers &
+      |    Layer    |  (Adds Source & Dest Ports)    |    Layer    |  Routes to Sockets
+      +-------------+                                +-------------+
+             |                                              ^
+             v                                              |
+      +-------------+                                +-------------+
+      |Network (IP) |  Encapsulates in IP Datagram   |Network (IP) |  Extracts Transport
+      |    Layer    |  (Adds Source & Dest IPs)      |    Layer    |  Segment
+      +-------------+                                +-------------+
+             |                                              ^
+             +================ (Network) ===================+
+```
+
+Every transport-layer segment (both UDP and TCP) includes at least two fields dedicated to this job:
+1. **Source Port Number** ($16$ bits)
+2. **Destination Port Number** ($16$ bits)
+
+---
+
+### 2. Connectionless Demultiplexing (UDP)
+
+In UDP, a socket is identified solely by a **2-tuple**:
+$$\text{UDP Socket Key} = (\text{Destination IP Address},\; \text{Destination Port Number})$$
+
+#### Step-by-Step Scenario:
+1. A server process creates a UDP socket and binds it to port $6428$:
+   ```python
+   server_socket = socket(AF_INET, SOCK_DGRAM)
+   server_socket.bind(('', 6428))
+   ```
+2. **Host A** (IP: `198.51.100.1`) sends a UDP packet from ephemeral port `9157` to Destination IP `203.0.113.5`, Port `6428`.
+3. **Host B** (IP: `198.51.100.2`) sends a UDP packet from ephemeral port `9157` to Destination IP `203.0.113.5`, Port `6428`.
+
+```
+Host A (198.51.100.1)                      Server (203.0.113.5)
+[Src: 9157, Dst: 6428] ------------------> | 
+                                           | ===> [Single UDP Socket on Port 6428]
+Host B (198.51.100.2)                      |
+[Src: 9157, Dst: 6428] ------------------> |
+```
+
+#### The Result:
+- Both packets arrive at the server.
+- The server OS checks the **Destination Port ($6428$)**.
+- Both packets are placed into the **exact same socket buffer**.
+- Why does the UDP header even include a *Source Port* then? 
+  - So the server application can read the `(Source IP, Source Port)` from the incoming message envelope and use it as the destination address when sending a **reply**.
+
+---
+
+### 3. Connection-Oriented Demultiplexing (TCP)
+
+In TCP, a socket is identified by a **4-tuple**:
+$$\text{TCP Socket Key} = (\text{Source IP Address},\; \text{Source Port Number},\; \text{Destination IP Address},\; \text{Destination Port Number})$$
+
+#### Why does TCP need all 4 fields, while UDP only needed 2?
+Unlike UDP (which just tosses independent datagrams into a box), TCP provides an **in-order, reliable byte stream with flow control and congestion control**. 
+This requires the OS to maintain a dedicated **state block (TCB - Transmission Control Block)** for every active connection:
+- Sequence numbers sent and acknowledged.
+- Send and receive buffer queues.
+- Current Congestion Window ($cwnd$) and Receive Window ($rwnd$).
+- Estimated Round-Trip Time ($RTT$) and retransmission timers.
+
+If segments from two different clients ended up in the same socket, their byte streams, sequence numbers, and ACKs would collide and corrupt the connection state.
+
+---
+
+### 4. The TCP Server Lifecycle: Welcoming Socket vs. Connected Sockets
+
+1. **Listening / Welcoming Socket**:
+   The web server listens on port $80$:
+   ```python
+   listen_socket = socket(AF_INET, SOCK_STREAM)
+   listen_socket.bind(('', 80))
+   listen_socket.listen()
+   ```
+2. **The 3-Way Handshake**:
+   When a client sends a TCP SYN packet (connection request) to port $80$, the server OS creates a **new, dedicated socket** specifically bound to that client's 4-tuple:
+   ```python
+   connection_socket, client_address = listen_socket.accept()
+   ```
+3. **Concurrent Connections**:
+   - The welcoming socket continues listening on port $80$ for *new* incoming connection requests.
+   - All subsequent data segments for existing connections are demultiplexed directly to their respective dedicated connection sockets.
+
+```
+Client A (198.51.100.1)                     Web Server (203.0.113.5)
+Port: 50000 -----------------------------> [Socket: (198.51.100.1, 50000, 203.0.113.5, 80)]
+Port: 50001 -----------------------------> [Socket: (198.51.100.1, 50001, 203.0.113.5, 80)]
+
+Client B (198.51.100.2)
+Port: 50000 -----------------------------> [Socket: (198.51.100.2, 50000, 203.0.113.5, 80)]
+                                           [Welcoming Socket: (*, *, 203.0.113.5, 80)]
+```
+
+---
+
+Let's test this mechanism with a concrete diagnostic question.
+
+
+> [!question] Quiz
+> Host A (IP: 10.0.0.1) and Host B (IP: 10.0.0.2) both establish active TCP connections to Server S (IP: 10.0.0.99) on destination port 80. By coincidence, both Host A and Host B choose the same ephemeral source port 55000. When Server S receives data segments from both hosts, what does its transport layer do?
+>
+> Testing TCP demultiplexing rules.
+>
+> 1. The two segments are demultiplexed to two separate, dedicated TCP sockets.
+> 2. The second segment is dropped because port 55000 is already in use by Host A.
+> 3. The two segments are delivered into the same TCP connection socket because the destination port and source port match.
+> 4. The two segments are delivered to the welcoming listening socket on port 80.
