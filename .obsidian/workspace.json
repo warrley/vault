@@ -81,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 474.1210632324219,
-    "collapsed": true
+    "width": 474.1210632324219
   },
   "right": {
     "id": "be969ee258392cf9",
@@ -248,7 +247,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "71eac90251d3e315",
+  "active": "95f8adec403d8901",
   "lastOpenFiles": [
     "study/computer_science/networks/01-introduction-to-networks.md",
     "study/computer_science/networks/02-application-layer.md",
