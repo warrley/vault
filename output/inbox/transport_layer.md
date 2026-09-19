@@ -475,3 +475,120 @@ Let's test this mechanism with a concrete diagnostic question.
 > 2. The second segment is dropped because port 55000 is already in use by Host A.
 > 3. The two segments are delivered into the same TCP connection socket because the destination port and source port match.
 > 4. The two segments are delivered to the welcoming listening socket on port 80.
+
+
+> [!success] Quiz — correct ✓
+> Your answer: 1. The two segments are demultiplexed to two separate, dedicated TCP sockets.
+> Correct answer: 1
+>
+> Because TCP demultiplexing uses the full 4-tuple (Source IP, Source Port, Dest IP, Dest Port), the difference in Source IP (10.0.0.1 vs 10.0.0.2) means the OS kernel demultiplexes these segments to two completely separate TCP connection sockets.
+
+
+> [!abstract] PI
+
+### Node 2: Connectionless Transport — UDP (Kurose §3.3)
+
+---
+
+#### 1. Motivation: Why Choose an "Unreliable" Protocol?
+
+If UDP provides no guarantee of delivery, ordering, or congestion control, why not use TCP for everything?
+
+There are four primary reasons developers choose UDP:
+1. **Finer Application-Level Control Over What Data Is Sent and When**: 
+   - TCP uses congestion control; if intermediate links get congested, TCP throttles the sender and waits.
+   - Real-time applications (VoIP, video calls, competitive online gaming) prefer dropping old packets rather than waiting for retransmissions or throttling. Stale real-time data is useless data.
+2. **No Connection Establishment Delay**:
+   - TCP requires a **3-way handshake** before sending any actual application data, adding a minimum of $1 \text{ RTT}$ (Round-Trip Time) of latency.
+   - UDP sends data immediately in the very first packet (essential for fast DNS lookups).
+3. **No Connection State**:
+   - TCP must allocate memory for send/receive buffers, sequence/ACK numbers, and congestion parameters.
+   - A server running UDP can typically support vastly more active clients because it maintains zero state per client.
+4. **Small Header Overhead**:
+   - A TCP header has a minimum of $20\text{ bytes}$ of overhead per segment.
+   - A UDP header has only **$8\text{ bytes}$**.
+
+---
+
+#### 2. The UDP Segment Structure
+
+A UDP segment header consists of only **four 16-bit fields** ($8$ bytes total):
+
+```
+ 0                   15 16                  31
++----------------------+----------------------+
+|  Source Port (16b)   | Destination Port(16b)|
++----------------------+----------------------+
+|     Length (16b)     |    Checksum (16b)    |
++----------------------+----------------------+
+|                                             |
+|          Application Payload Data           |
+|                                             |
++---------------------------------------------+
+```
+
+- **Length**: Total length of the UDP segment (header $+$ data) in bytes.
+- **Checksum**: Used by the receiving host to determine whether bits within the segment were altered (flipped) during transmission.
+
+---
+
+#### 3. The Internet Checksum Algorithm
+
+The goal of the checksum is to detect bit errors caused by electrical noise, fading wireless signals, or faulty router hardware.
+
+##### How the Sender Computes the Checksum:
+1. Treat all bytes in the segment (header $+$ payload) as a sequence of **16-bit integers**.
+2. Add all 16-bit integers together using **1's complement addition**:
+   - Whenever the addition produces a **carry bit** past the 16th bit (overflow), **wrap the carry bit around** and add it to the least significant bit (LSB).
+3. Compute the **1's complement (bitwise inversion)** of the final sum ($0 \to 1, 1 \to 0$).
+4. Insert this inverted value into the UDP Checksum field.
+
+---
+
+##### Concrete Calculation Example:
+
+Suppose we want to compute the checksum for two 16-bit words:
+- Word 1: `1110 0110 0100 1100`
+- Word 2: `1101 0101 0101 0101`
+
+**Step 1: Standard binary addition**
+$$\begin{array}{r@{\quad}l}
+  & 1110\;0110\;0100\;1100 \\
++ & 1101\;0101\;0101\;0101 \\
+\hline
+\mathbf{1} & 1011\;1011\;1010\;0001 \quad (\text{Carry bit: } 1)
+\end{array}$$
+
+**Step 2: Wrap around the carry bit**
+$$\begin{array}{r@{\quad}l}
+  & 1011\;1011\;1010\;0001 \\
++ & 0000\;0000\;0000\;0001 \\
+\hline
+  & 1011\;1011\;1010\;0010 \quad (\text{Sum})
+\end{array}$$
+
+**Step 3: Bitwise Inversion (1's complement)**
+$$\text{Checksum} = \mathbf{0100\;0100\;0101\;1101}$$
+
+---
+
+##### How the Receiver Verifies Integrity:
+The receiver adds **all 16-bit words together PLUS the received Checksum**:
+$$\text{Word}_1 + \text{Word}_2 + \dots + \text{Checksum}$$
+- If no bit errors occurred, the result will be **all 1s**: `1111 1111 1111 1111` ($0\text{xFFFF}$).
+- If even a single bit in the sum is `0`, an error is detected.
+
+---
+
+Let's test this verification step with a quick diagnostic question.
+
+
+> [!question] Quiz
+> A receiver calculates the 1's complement sum of all 16-bit words of an incoming UDP segment, including the received checksum field. The result of the sum is: 1111 1110 1111 1111. What action does the receiver take?
+>
+> Testing checksum verification mechanics at the receiver.
+>
+> 1. The receiver requests an immediate retransmission from the sender.
+> 2. The receiver concludes the segment is valid and delivers it to the socket.
+> 3. The receiver uses the checksum to automatically correct the single inverted bit.
+> 4. The receiver detects a bit error and discards or flags the segment.
