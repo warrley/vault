@@ -1,0 +1,131 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{burgers1948model}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6a9d5d42079e586ef0e916c81692d09f}{%
+           family={Burgers},
+           familyi={B\bibinitperiod},
+           given={Johannes\bibnamedelima Martinus},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{6a9d5d42079e586ef0e916c81692d09f}
+      \strng{fullhash}{6a9d5d42079e586ef0e916c81692d09f}
+      \strng{fullhashraw}{6a9d5d42079e586ef0e916c81692d09f}
+      \strng{bibnamehash}{6a9d5d42079e586ef0e916c81692d09f}
+      \strng{authorbibnamehash}{6a9d5d42079e586ef0e916c81692d09f}
+      \strng{authornamehash}{6a9d5d42079e586ef0e916c81692d09f}
+      \strng{authorfullhash}{6a9d5d42079e586ef0e916c81692d09f}
+      \strng{authorfullhashraw}{6a9d5d42079e586ef0e916c81692d09f}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Applied Mechanics}
+      \field{title}{A mathematical model illustrating the theory of turbulence}
+      \field{volume}{1}
+      \field{year}{1948}
+      \field{pages}{171\bibrangedash 199}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1016/S0065-2156(08)70100-5
+      \endverb
+    \endentry
+    \entry{pereira2019}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=cad43328869e501f8a0fce0c1cf4f681}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={Roberto\bibnamedelima Ribeiro},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Laboratório Nacional de Computação Científica (LNCC)}%
+      }
+      \list{location}{1}{%
+        {Petrópolis, RJ}%
+      }
+      \strng{namehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{fullhash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{fullhashraw}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{bibnamehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authorbibnamehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authornamehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authorfullhash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authorfullhashraw}{cad43328869e501f8a0fce0c1cf4f681}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Métodos de Diferenças Finitas para Problemas de Difusão e Reação Não Lineares}
+      \field{type}{phdthesis}
+      \field{year}{2019}
+    \endentry
+    \entry{raissi2019pinns}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=95a17c39168b9e6b8812f207b4e036c1}{%
+           family={Raissi},
+           familyi={R\bibinitperiod},
+           given={Maziar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=197d71332633e07aa578718628fdc405}{%
+           family={Perdikaris},
+           familyi={P\bibinitperiod},
+           given={Paris},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bfaf154b1f300f885a75adce4c6b773e}{%
+           family={Karniadakis},
+           familyi={K\bibinitperiod},
+           given={George\bibnamedelima Em},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhashraw}{767366a7d0fdde767496da8385111e76}
+      \strng{bibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorbibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authornamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhashraw}{767366a7d0fdde767496da8385111e76}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{title}{Physics-informed neural networks: {A} deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations}
+      \field{volume}{378}
+      \field{year}{2019}
+      \field{pages}{686\bibrangedash 707}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2018.10.045
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
