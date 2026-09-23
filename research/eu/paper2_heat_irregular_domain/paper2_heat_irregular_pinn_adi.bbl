@@ -1,0 +1,327 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{pereira2019}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=83e128a067d131b8d1fc147a811dbf24}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={Ricardo\bibnamedelima Reis},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Laboratório Nacional de Computação Científica}%
+      }
+      \list{location}{1}{%
+        {Petrópolis, RJ}%
+      }
+      \strng{namehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{fullhash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{fullhashraw}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{bibnamehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authorbibnamehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authornamehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authorfullhash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authorfullhashraw}{83e128a067d131b8d1fc147a811dbf24}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Métodos de Diferenças Finitas para Problemas de Difusão e Reação Não Lineares}
+      \field{type}{Tese (Doutorado em Modelagem Computacional)}
+      \field{urlday}{20}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://tede.lncc.br/handle/tede/313
+      \endverb
+      \verb{url}
+      \verb https://tede.lncc.br/handle/tede/313
+      \endverb
+    \endentry
+    \entry{peaceman1955}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=aac06d5661e9fc3f8b29b2f8b0359b2d}{%
+           family={Peaceman},
+           familyi={P\bibinitperiod},
+           given={Donald\bibnamedelima W},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60f9194b440f4cde48513d448d9a19d9}{%
+           family={Rachford},
+           familyi={R\bibinitperiod},
+           given={Henry\bibnamedelima H},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0,
+           suffix={Jr},
+           suffixi={J\bibinitperiod},
+           suffixun=0}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{fullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{fullhashraw}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{bibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorbibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authornamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorfullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorfullhashraw}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Society for Industrial and Applied Mathematics}
+      \field{number}{1}
+      \field{title}{The numerical solution of parabolic and elliptic differential equations}
+      \field{volume}{3}
+      \field{year}{1955}
+      \field{pages}{28\bibrangedash 41}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1137/0103003
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1137/0103003
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1137/0103003
+      \endverb
+    \endentry
+    \entry{raissi2019pinns}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=95a17c39168b9e6b8812f207b4e036c1}{%
+           family={Raissi},
+           familyi={R\bibinitperiod},
+           given={Maziar},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=197d71332633e07aa578718628fdc405}{%
+           family={Perdikaris},
+           familyi={P\bibinitperiod},
+           given={Paris},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bfaf154b1f300f885a75adce4c6b773e}{%
+           family={Karniadakis},
+           familyi={K\bibinitperiod},
+           given={George\bibnamedelima Em},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhashraw}{767366a7d0fdde767496da8385111e76}
+      \strng{bibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorbibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authornamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhashraw}{767366a7d0fdde767496da8385111e76}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{title}{Physics-informed neural networks: {A} deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations}
+      \field{volume}{378}
+      \field{year}{2019}
+      \field{pages}{686\bibrangedash 707}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2018.10.045
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jcp.2018.10.045
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jcp.2018.10.045
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{peaceman1955}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=aac06d5661e9fc3f8b29b2f8b0359b2d}{%
+           family={Peaceman},
+           familyi={P\bibinitperiod},
+           given={Donald\bibnamedelima W},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60f9194b440f4cde48513d448d9a19d9}{%
+           family={Rachford},
+           familyi={R\bibinitperiod},
+           given={Henry\bibnamedelima H},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0,
+           suffix={Jr},
+           suffixi={J\bibinitperiod},
+           suffixun=0}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{fullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{fullhashraw}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{bibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorbibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authornamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorfullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorfullhashraw}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Society for Industrial and Applied Mathematics}
+      \field{number}{1}
+      \field{title}{The numerical solution of parabolic and elliptic differential equations}
+      \field{volume}{3}
+      \field{year}{1955}
+      \field{pages}{28\bibrangedash 41}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1137/0103003
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1137/0103003
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1137/0103003
+      \endverb
+    \endentry
+    \entry{pereira2019}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=83e128a067d131b8d1fc147a811dbf24}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={Ricardo\bibnamedelima Reis},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Laboratório Nacional de Computação Científica}%
+      }
+      \list{location}{1}{%
+        {Petrópolis, RJ}%
+      }
+      \strng{namehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{fullhash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{fullhashraw}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{bibnamehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authorbibnamehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authornamehash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authorfullhash}{83e128a067d131b8d1fc147a811dbf24}
+      \strng{authorfullhashraw}{83e128a067d131b8d1fc147a811dbf24}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Métodos de Diferenças Finitas para Problemas de Difusão e Reação Não Lineares}
+      \field{type}{Tese (Doutorado em Modelagem Computacional)}
+      \field{urlday}{20}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://tede.lncc.br/handle/tede/313
+      \endverb
+      \verb{url}
+      \verb https://tede.lncc.br/handle/tede/313
+      \endverb
+    \endentry
+    \entry{raissi2019pinns}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=95a17c39168b9e6b8812f207b4e036c1}{%
+           family={Raissi},
+           familyi={R\bibinitperiod},
+           given={Maziar},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=197d71332633e07aa578718628fdc405}{%
+           family={Perdikaris},
+           familyi={P\bibinitperiod},
+           given={Paris},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bfaf154b1f300f885a75adce4c6b773e}{%
+           family={Karniadakis},
+           familyi={K\bibinitperiod},
+           given={George\bibnamedelima Em},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhashraw}{767366a7d0fdde767496da8385111e76}
+      \strng{bibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorbibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authornamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhashraw}{767366a7d0fdde767496da8385111e76}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{title}{Physics-informed neural networks: {A} deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations}
+      \field{volume}{378}
+      \field{year}{2019}
+      \field{pages}{686\bibrangedash 707}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2018.10.045
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jcp.2018.10.045
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jcp.2018.10.045
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

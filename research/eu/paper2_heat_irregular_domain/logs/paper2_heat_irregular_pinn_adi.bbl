@@ -1,0 +1,356 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{baydin2018autodiff}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=74d5b5b1476ad2d13f3abe6e7598a37e}{%
+           family={Baydin},
+           familyi={B\bibinitperiod},
+           given={Atilim\bibnamedelima Gunes},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6724042a399c2e67a6f3a2ec5612519e}{%
+           family={Pearlmutter},
+           familyi={P\bibinitperiod},
+           given={Barak\bibnamedelima A},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=63357a985ed2fb7d96cad546a373fe11}{%
+           family={Radul},
+           familyi={R\bibinitperiod},
+           given={Alexey\bibnamedelima Andreyevich},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=485565bc90eeede382cade10f06f69ec}{%
+           family={Siskind},
+           familyi={S\bibinitperiod},
+           given={Jeffrey\bibnamedelima Mark},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e444b7e1bd409de27db2b1afce3ff492}
+      \strng{fullhash}{31169ae8028444120af473ccfa722828}
+      \strng{fullhashraw}{31169ae8028444120af473ccfa722828}
+      \strng{bibnamehash}{e444b7e1bd409de27db2b1afce3ff492}
+      \strng{authorbibnamehash}{e444b7e1bd409de27db2b1afce3ff492}
+      \strng{authornamehash}{e444b7e1bd409de27db2b1afce3ff492}
+      \strng{authorfullhash}{31169ae8028444120af473ccfa722828}
+      \strng{authorfullhashraw}{31169ae8028444120af473ccfa722828}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{number}{153}
+      \field{title}{Automatic differentiation in machine learning: a survey}
+      \field{volume}{18}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 43}
+      \range{pages}{43}
+      \verb{urlraw}
+      \verb http://jmlr.org/papers/v18/17-468.html
+      \endverb
+      \verb{url}
+      \verb http://jmlr.org/papers/v18/17-468.html
+      \endverb
+    \endentry
+    \entry{karniadakis2021review}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=bfaf154b1f300f885a75adce4c6b773e}{%
+           family={Karniadakis},
+           familyi={K\bibinitperiod},
+           given={George\bibnamedelima Em},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6724128bc20ba35122214b84fa281063}{%
+           family={Kevrekidis},
+           familyi={K\bibinitperiod},
+           given={Ioannis\bibnamedelima G},
+           giveni={I\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f6f1357e5a7fb658e3e9c999886ce83}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=197d71332633e07aa578718628fdc405}{%
+           family={Perdikaris},
+           familyi={P\bibinitperiod},
+           given={Paris},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=15db674b3efc6848f40514aa0034717a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Sifan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13b67d4d83b1d3002d9480fa84cdc9ee}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Liu},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{0ca376f95d5378ee9091f725b7c83175}
+      \strng{fullhash}{f60a0a5b39f53a61a153afd70f5530c7}
+      \strng{fullhashraw}{f60a0a5b39f53a61a153afd70f5530c7}
+      \strng{bibnamehash}{0ca376f95d5378ee9091f725b7c83175}
+      \strng{authorbibnamehash}{0ca376f95d5378ee9091f725b7c83175}
+      \strng{authornamehash}{0ca376f95d5378ee9091f725b7c83175}
+      \strng{authorfullhash}{f60a0a5b39f53a61a153afd70f5530c7}
+      \strng{authorfullhashraw}{f60a0a5b39f53a61a153afd70f5530c7}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Reviews Physics}
+      \field{number}{6}
+      \field{title}{Physics-informed machine learning}
+      \field{volume}{3}
+      \field{year}{2021}
+      \field{pages}{422\bibrangedash 440}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1038/s42254-021-00314-5
+      \endverb
+    \endentry
+    \entry{kingma2015adam}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b6fbd171848aad4edf3925543f1f1522}{%
+           family={Kingma},
+           familyi={K\bibinitperiod},
+           given={Diederik\bibnamedelima P},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8aa66e8231cc2fdbe67aa4f18ca970c6}{%
+           family={Ba},
+           familyi={B\bibinitperiod},
+           given={Jimmy},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {San Diego}%
+      }
+      \strng{namehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{fullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{fullhashraw}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{bibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorbibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authornamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorfullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorfullhashraw}{a09df9f123146b8e2c7f1134c9496932}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{3rd International Conference on Learning Representations ({ICLR})}
+      \field{title}{Adam: {A} Method for Stochastic Optimization}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1412.6980
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1412.6980
+      \endverb
+    \endentry
+    \entry{morton2005numerical}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2583bd066c7ae14ec31288c576c7ac35}{%
+           family={Morton},
+           familyi={M\bibinitperiod},
+           given={Keith\bibnamedelima William},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e72abb78453042ba3c4c03e15356566c}{%
+           family={Mayers},
+           familyi={M\bibinitperiod},
+           given={David\bibnamedelima Francis},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \strng{fullhash}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \strng{fullhashraw}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \strng{bibnamehash}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \strng{authorbibnamehash}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \strng{authornamehash}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \strng{authorfullhash}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \strng{authorfullhashraw}{0d4ce546df2ad48d3c64c555ea3654bd}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Numerical Solution of Partial Differential Equations}
+      \field{year}{2005}
+      \verb{doi}
+      \verb 10.1017/CBO9780511812248
+      \endverb
+    \endentry
+    \entry{peaceman1955}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=aac06d5661e9fc3f8b29b2f8b0359b2d}{%
+           family={Peaceman},
+           familyi={P\bibinitperiod},
+           given={Donald\bibnamedelima W},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60f9194b440f4cde48513d448d9a19d9}{%
+           family={Rachford},
+           familyi={R\bibinitperiod},
+           given={Henry\bibnamedelima H},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0,
+           suffix={Jr},
+           suffixi={J\bibinitperiod},
+           suffixun=0}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{fullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{fullhashraw}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{bibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorbibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authornamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorfullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorfullhashraw}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Society for Industrial and Applied Mathematics}
+      \field{number}{1}
+      \field{title}{The numerical solution of parabolic and elliptic differential equations}
+      \field{volume}{3}
+      \field{year}{1955}
+      \field{pages}{28\bibrangedash 41}
+      \range{pages}{14}
+    \endentry
+    \entry{pereira2019}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cad43328869e501f8a0fce0c1cf4f681}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={Roberto\bibnamedelima Ribeiro},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Laboratório Nacional de Computação Científica (LNCC)}%
+      }
+      \list{location}{1}{%
+        {Petrópolis, RJ}%
+      }
+      \strng{namehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{fullhash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{fullhashraw}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{bibnamehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authorbibnamehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authornamehash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authorfullhash}{cad43328869e501f8a0fce0c1cf4f681}
+      \strng{authorfullhashraw}{cad43328869e501f8a0fce0c1cf4f681}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Métodos de Diferenças Finitas para Problemas de Difusão e Reação Não Lineares}
+      \field{type}{phdthesis}
+      \field{year}{2019}
+    \endentry
+    \entry{raissi2019pinns}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=95a17c39168b9e6b8812f207b4e036c1}{%
+           family={Raissi},
+           familyi={R\bibinitperiod},
+           given={Maziar},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=197d71332633e07aa578718628fdc405}{%
+           family={Perdikaris},
+           familyi={P\bibinitperiod},
+           given={Paris},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bfaf154b1f300f885a75adce4c6b773e}{%
+           family={Karniadakis},
+           familyi={K\bibinitperiod},
+           given={George\bibnamedelima Em},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{fullhashraw}{767366a7d0fdde767496da8385111e76}
+      \strng{bibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorbibnamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authornamehash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhash}{767366a7d0fdde767496da8385111e76}
+      \strng{authorfullhashraw}{767366a7d0fdde767496da8385111e76}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{title}{Physics-informed neural networks: {A} deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations}
+      \field{volume}{378}
+      \field{year}{2019}
+      \field{pages}{686\bibrangedash 707}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2018.10.045
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

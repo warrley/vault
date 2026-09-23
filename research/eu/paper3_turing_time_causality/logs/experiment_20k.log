@@ -1,0 +1,122 @@
+============================================================
+SCHNAKENBERG PINN vs ADI EXPERIMENT (20,000 EPOCHS)
+Compute Device: cuda (NVIDIA GeForce RTX 3050 Laptop GPU)
+============================================================
+[Parameters] a=0.1305, b=0.7695, kappa=100.0
+[Parameters] D1(Du)=0.05, D2(Dv)=1.0, Ratio Dv/Du=20.0
+[Parameters] Steady State (u*, v*) = (0.9000, 0.9500)
+[Parameters] Domain: [0, 1.0]x[0, 1.0], t in [0, 2.0]
+
+[Step 1/3] Generating High-Resolution Ground Truth Simulation (Pereira 2019 ADI)...
+  Captured Ground Truth snapshot at t = 0.02s (min u: 0.8999, max u: 0.9014)
+  Captured Ground Truth snapshot at t = 0.41s (min u: 0.3075, max u: 2.2621)
+  Captured Ground Truth snapshot at t = 0.81s (min u: 0.2127, max u: 2.8322)
+  Captured Ground Truth snapshot at t = 1.21s (min u: 0.2129, max u: 2.7919)
+  Captured Ground Truth snapshot at t = 1.60s (min u: 0.2128, max u: 2.7709)
+  Captured Ground Truth snapshot at t = 2.00s (min u: 0.2134, max u: 2.8305)
+Ground Truth simulation completed in 9.59 s
+
+[PINN Model] Pure MLP initialized: 5 hidden layers x 128 neurons, Tanh activations.
+[PINN Model] Total trainable parameters: 66,818
+
+[Step 2/3] Starting Full GPU Training for 20000 Epochs...
+Epoch [    1/20000] | Total: 6.536074e+03 | PDE_u: 5.401396e+02 | PDE_v: 5.975825e+03 | IC: 1.992280e+00 | BC: 3.736128e-02 | Elapsed: 0.0m | ETA: 67.3m
+Epoch [  250/20000] | Total: 3.286573e+00 | PDE_u: 9.891438e-01 | PDE_v: 2.241395e+00 | IC: 8.009805e-04 | BC: 9.605049e-03 | Elapsed: 0.3m | ETA: 22.1m
+Epoch [  500/20000] | Total: 5.733364e+00 | PDE_u: 1.501983e+00 | PDE_v: 4.211348e+00 | IC: 3.568366e-04 | BC: 3.292951e-03 | Elapsed: 0.6m | ETA: 21.9m
+Epoch [  750/20000] | Total: 1.318026e+01 | PDE_u: 3.215680e+00 | PDE_v: 9.952175e+00 | IC: 3.750187e-04 | BC: 1.730602e-03 | Elapsed: 0.8m | ETA: 21.0m
+Epoch [ 1000/20000] | Total: 2.955690e-01 | PDE_u: 8.307799e-02 | PDE_v: 2.045900e-01 | IC: 7.196711e-05 | BC: 1.436280e-03 | Elapsed: 1.1m | ETA: 20.6m
+Epoch [ 1250/20000] | Total: 2.021022e-01 | PDE_u: 5.567318e-02 | PDE_v: 1.408951e-01 | IC: 4.179259e-05 | BC: 1.023187e-03 | Elapsed: 1.3m | ETA: 19.9m
+Epoch [ 1500/20000] | Total: 1.289090e-01 | PDE_u: 3.621653e-02 | PDE_v: 8.843160e-02 | IC: 3.067449e-05 | BC: 7.908192e-04 | Elapsed: 1.6m | ETA: 19.4m
+Epoch [ 1750/20000] | Total: 1.638977e+00 | PDE_u: 3.953290e-01 | PDE_v: 1.238666e+00 | IC: 3.748068e-05 | BC: 9.212821e-04 | Elapsed: 1.8m | ETA: 18.8m
+Epoch [ 2000/20000] | Total: 7.913011e-02 | PDE_u: 2.242734e-02 | PDE_v: 5.336585e-02 | IC: 2.036829e-05 | BC: 6.266476e-04 | Elapsed: 2.0m | ETA: 18.4m
+Epoch [ 2250/20000] | Total: 6.015920e-02 | PDE_u: 1.715498e-02 | PDE_v: 4.037299e-02 | IC: 1.458681e-05 | BC: 4.970732e-04 | Elapsed: 2.3m | ETA: 18.0m
+Epoch [ 2500/20000] | Total: 5.919895e-02 | PDE_u: 1.562086e-02 | PDE_v: 4.153878e-02 | IC: 1.023668e-05 | BC: 3.873874e-04 | Elapsed: 2.5m | ETA: 17.7m
+Epoch [ 2750/20000] | Total: 5.017932e-02 | PDE_u: 1.476373e-02 | PDE_v: 3.333677e-02 | IC: 1.008836e-05 | BC: 3.955875e-04 | Elapsed: 2.8m | ETA: 17.4m
+Epoch [ 3000/20000] | Total: 1.812620e+00 | PDE_u: 4.460418e-01 | PDE_v: 1.364675e+00 | IC: 2.673756e-05 | BC: 3.271254e-04 | Elapsed: 3.0m | ETA: 17.2m
+Epoch [ 3250/20000] | Total: 2.702801e-02 | PDE_u: 7.891876e-03 | PDE_v: 1.772865e-02 | IC: 7.459547e-06 | BC: 2.665783e-04 | Elapsed: 3.3m | ETA: 16.9m
+Epoch [ 3500/20000] | Total: 3.034008e-01 | PDE_u: 7.225596e-02 | PDE_v: 2.299924e-01 | IC: 1.372007e-05 | BC: 2.030498e-04 | Elapsed: 3.5m | ETA: 16.6m
+Epoch [ 3750/20000] | Total: 1.537393e-02 | PDE_u: 4.646474e-03 | PDE_v: 9.684281e-03 | IC: 4.792255e-06 | BC: 1.990513e-04 | Elapsed: 3.8m | ETA: 16.4m
+Epoch [ 4000/20000] | Total: 1.367349e-02 | PDE_u: 3.568840e-03 | PDE_v: 9.326978e-03 | IC: 3.454684e-06 | BC: 1.486260e-04 | Elapsed: 4.0m | ETA: 16.1m
+Epoch [ 4250/20000] | Total: 1.036211e-02 | PDE_u: 2.973385e-03 | PDE_v: 6.681025e-03 | IC: 3.026339e-06 | BC: 1.354883e-04 | Elapsed: 4.3m | ETA: 15.8m
+Epoch [ 4500/20000] | Total: 7.628923e-03 | PDE_u: 2.260236e-03 | PDE_v: 4.760467e-03 | IC: 2.380542e-06 | BC: 1.168830e-04 | Elapsed: 4.5m | ETA: 15.5m
+Epoch [ 4750/20000] | Total: 7.102217e-03 | PDE_u: 2.005127e-03 | PDE_v: 4.588286e-03 | IC: 1.700230e-06 | BC: 9.836044e-05 | Elapsed: 4.8m | ETA: 15.3m
+Epoch [ 5000/20000] | Total: 8.612458e-01 | PDE_u: 1.729187e-01 | PDE_v: 6.877921e-01 | IC: 7.646677e-06 | BC: 9.172523e-05 | Elapsed: 5.0m | ETA: 15.0m
+Epoch [ 5250/20000] | Total: 5.146583e-03 | PDE_u: 1.524199e-03 | PDE_v: 3.240379e-03 | IC: 1.464079e-06 | BC: 7.347266e-05 | Elapsed: 5.2m | ETA: 14.7m
+Epoch [ 5500/20000] | Total: 7.355909e-03 | PDE_u: 2.012839e-03 | PDE_v: 4.989516e-03 | IC: 1.889304e-06 | BC: 6.693232e-05 | Elapsed: 5.5m | ETA: 14.5m
+Epoch [ 5750/20000] | Total: 1.762675e-02 | PDE_u: 4.429346e-03 | PDE_v: 1.291689e-02 | IC: 5.890133e-07 | BC: 5.492590e-05 | Elapsed: 5.7m | ETA: 14.2m
+Epoch [ 6000/20000] | Total: 3.306912e-03 | PDE_u: 1.086016e-03 | PDE_v: 1.968346e-03 | IC: 9.989327e-07 | BC: 4.851221e-05 | Elapsed: 6.0m | ETA: 14.0m
+Epoch [ 6250/20000] | Total: 5.435763e-02 | PDE_u: 1.271459e-02 | PDE_v: 4.142023e-02 | IC: 2.517551e-06 | BC: 3.952698e-05 | Elapsed: 6.2m | ETA: 13.7m
+Epoch [ 6500/20000] | Total: 2.027060e-03 | PDE_u: 6.691315e-04 | PDE_v: 1.187045e-03 | IC: 5.676570e-07 | BC: 3.304145e-05 | Elapsed: 6.5m | ETA: 13.4m
+Epoch [ 6750/20000] | Total: 3.352726e-03 | PDE_u: 9.544810e-04 | PDE_v: 2.229200e-03 | IC: 8.091823e-07 | BC: 3.219066e-05 | Elapsed: 6.7m | ETA: 13.2m
+Epoch [ 7000/20000] | Total: 4.948154e-02 | PDE_u: 1.093227e-02 | PDE_v: 3.840272e-02 | IC: 2.093010e-06 | BC: 2.512331e-05 | Elapsed: 7.0m | ETA: 12.9m
+Epoch [ 7250/20000] | Total: 1.677539e-02 | PDE_u: 4.147716e-03 | PDE_v: 1.250682e-02 | IC: 1.123288e-06 | BC: 2.192379e-05 | Elapsed: 7.2m | ETA: 12.7m
+Epoch [ 7500/20000] | Total: 2.268472e-03 | PDE_u: 6.325734e-04 | PDE_v: 1.533828e-03 | IC: 5.393559e-07 | BC: 1.933526e-05 | Elapsed: 7.4m | ETA: 12.4m
+Epoch [ 7750/20000] | Total: 1.787305e-03 | PDE_u: 5.896511e-04 | PDE_v: 1.097629e-03 | IC: 4.215999e-07 | BC: 1.916169e-05 | Elapsed: 7.7m | ETA: 12.1m
+Epoch [ 8000/20000] | Total: 1.012304e-03 | PDE_u: 3.222033e-04 | PDE_v: 6.113241e-04 | IC: 3.222305e-07 | BC: 1.511088e-05 | Elapsed: 7.9m | ETA: 11.9m
+Epoch [ 8250/20000] | Total: 1.659598e-03 | PDE_u: 5.932779e-04 | PDE_v: 9.823090e-04 | IC: 4.459114e-07 | BC: 1.591049e-05 | Elapsed: 8.2m | ETA: 11.6m
+Epoch [ 8500/20000] | Total: 1.101333e-03 | PDE_u: 3.597815e-04 | PDE_v: 6.768799e-04 | IC: 3.347818e-07 | BC: 1.226479e-05 | Elapsed: 8.4m | ETA: 11.4m
+Epoch [ 8750/20000] | Total: 6.752892e-01 | PDE_u: 1.474346e-01 | PDE_v: 5.276912e-01 | IC: 1.130231e-05 | BC: 1.006440e-05 | Elapsed: 8.6m | ETA: 11.1m
+Epoch [ 9000/20000] | Total: 8.466163e-04 | PDE_u: 2.659178e-04 | PDE_v: 5.298848e-04 | IC: 2.503802e-07 | BC: 9.661972e-06 | Elapsed: 8.9m | ETA: 10.8m
+Epoch [ 9250/20000] | Total: 1.947037e-01 | PDE_u: 4.558515e-02 | PDE_v: 1.490240e-01 | IC: 5.317991e-06 | BC: 8.272084e-06 | Elapsed: 9.1m | ETA: 10.6m
+Epoch [ 9500/20000] | Total: 7.746749e-04 | PDE_u: 2.204015e-04 | PDE_v: 5.162360e-04 | IC: 2.075951e-07 | BC: 7.192283e-06 | Elapsed: 9.4m | ETA: 10.3m
+Epoch [ 9750/20000] | Total: 1.587937e-03 | PDE_u: 4.287243e-04 | PDE_v: 1.083516e-03 | IC: 2.775309e-07 | BC: 1.458423e-05 | Elapsed: 9.6m | ETA: 10.1m
+Epoch [10000/20000] | Total: 6.790093e-04 | PDE_u: 1.898238e-04 | PDE_v: 4.397660e-04 | IC: 1.939949e-07 | BC: 9.495900e-06 | Elapsed: 9.8m | ETA: 9.8m
+Epoch [10250/20000] | Total: 5.434481e-04 | PDE_u: 1.535248e-04 | PDE_v: 3.514589e-04 | IC: 1.440038e-07 | BC: 7.404872e-06 | Elapsed: 10.1m | ETA: 9.6m
+Epoch [10500/20000] | Total: 7.357524e-03 | PDE_u: 2.131071e-03 | PDE_v: 5.179299e-03 | IC: 7.121133e-07 | BC: 8.006486e-06 | Elapsed: 10.3m | ETA: 9.3m
+Epoch [10750/20000] | Total: 8.419069e-04 | PDE_u: 2.507479e-04 | PDE_v: 5.544965e-04 | IC: 3.787800e-07 | BC: 6.574941e-06 | Elapsed: 10.5m | ETA: 9.1m
+Epoch [11000/20000] | Total: 5.602625e-04 | PDE_u: 1.702722e-04 | PDE_v: 3.590590e-04 | IC: 2.549303e-07 | BC: 5.676388e-06 | Elapsed: 10.8m | ETA: 8.8m
+Epoch [11250/20000] | Total: 6.220338e-04 | PDE_u: 1.532059e-04 | PDE_v: 4.421627e-04 | IC: 2.212710e-07 | BC: 4.890502e-06 | Elapsed: 11.0m | ETA: 8.6m
+Epoch [11500/20000] | Total: 3.970436e-04 | PDE_u: 1.163303e-04 | PDE_v: 2.584928e-04 | IC: 1.634547e-07 | BC: 4.117192e-06 | Elapsed: 11.3m | ETA: 8.3m
+Epoch [11750/20000] | Total: 3.962555e-04 | PDE_u: 1.132382e-04 | PDE_v: 2.645398e-04 | IC: 1.483909e-07 | BC: 3.398718e-06 | Elapsed: 11.5m | ETA: 8.1m
+Epoch [12000/20000] | Total: 3.046904e-04 | PDE_u: 9.432899e-05 | PDE_v: 1.949344e-04 | IC: 1.162291e-07 | BC: 2.852952e-06 | Elapsed: 11.8m | ETA: 7.8m
+Epoch [12250/20000] | Total: 3.183043e-04 | PDE_u: 1.013524e-04 | PDE_v: 2.017466e-04 | IC: 1.183701e-07 | BC: 2.804294e-06 | Elapsed: 12.0m | ETA: 7.6m
+Epoch [12500/20000] | Total: 2.832561e-04 | PDE_u: 8.607168e-05 | PDE_v: 1.844520e-04 | IC: 1.013854e-07 | BC: 2.343728e-06 | Elapsed: 12.3m | ETA: 7.4m
+Epoch [12750/20000] | Total: 6.258196e-04 | PDE_u: 2.223902e-04 | PDE_v: 3.647113e-04 | IC: 2.689050e-07 | BC: 7.205808e-06 | Elapsed: 12.5m | ETA: 7.1m
+Epoch [13000/20000] | Total: 3.208350e-04 | PDE_u: 1.042059e-04 | PDE_v: 1.924869e-04 | IC: 1.113997e-07 | BC: 4.605635e-06 | Elapsed: 12.8m | ETA: 6.9m
+Epoch [13250/20000] | Total: 3.920328e-04 | PDE_u: 1.099105e-04 | PDE_v: 2.642279e-04 | IC: 7.378743e-08 | BC: 3.431300e-06 | Elapsed: 13.0m | ETA: 6.6m
+Epoch [13500/20000] | Total: 3.278522e-04 | PDE_u: 9.600030e-05 | PDE_v: 2.174651e-04 | IC: 8.506285e-08 | BC: 2.707225e-06 | Elapsed: 13.3m | ETA: 6.4m
+Epoch [13750/20000] | Total: 2.746662e-04 | PDE_u: 7.950620e-05 | PDE_v: 1.832839e-04 | IC: 7.379382e-08 | BC: 2.227620e-06 | Elapsed: 13.5m | ETA: 6.1m
+Epoch [14000/20000] | Total: 2.714398e-04 | PDE_u: 8.269872e-05 | PDE_v: 1.786776e-04 | IC: 6.109580e-08 | BC: 1.890522e-06 | Elapsed: 13.7m | ETA: 5.9m
+Epoch [14250/20000] | Total: 2.374612e-04 | PDE_u: 6.805838e-05 | PDE_v: 1.602797e-04 | IC: 6.044820e-08 | BC: 1.703725e-06 | Elapsed: 14.0m | ETA: 5.6m
+Epoch [14500/20000] | Total: 2.301439e-04 | PDE_u: 6.465080e-05 | PDE_v: 1.570409e-04 | IC: 5.651536e-08 | BC: 1.577397e-06 | Elapsed: 14.2m | ETA: 5.4m
+Epoch [14750/20000] | Total: 2.300078e-04 | PDE_u: 6.493209e-05 | PDE_v: 1.572386e-04 | IC: 5.855086e-08 | BC: 1.450317e-06 | Elapsed: 14.5m | ETA: 5.1m
+Epoch [15000/20000] | Total: 2.790028e-03 | PDE_u: 7.863997e-04 | PDE_v: 1.995121e-03 | IC: 1.501432e-07 | BC: 1.401118e-06 | Elapsed: 14.7m | ETA: 4.9m
+Epoch [15250/20000] | Total: 6.625478e-04 | PDE_u: 1.925010e-04 | PDE_v: 4.631523e-04 | IC: 4.314644e-08 | BC: 1.292594e-06 | Elapsed: 14.9m | ETA: 4.7m
+Epoch [15500/20000] | Total: 2.457379e-04 | PDE_u: 7.288522e-05 | PDE_v: 1.651666e-04 | IC: 7.059761e-08 | BC: 1.396032e-06 | Elapsed: 15.2m | ETA: 4.4m
+Epoch [15750/20000] | Total: 2.412327e-04 | PDE_u: 6.978342e-05 | PDE_v: 1.644685e-04 | IC: 4.927712e-08 | BC: 1.297602e-06 | Elapsed: 15.4m | ETA: 4.2m
+Epoch [16000/20000] | Total: 2.296378e-04 | PDE_u: 6.753168e-05 | PDE_v: 1.555387e-04 | IC: 5.172885e-08 | BC: 1.210024e-06 | Elapsed: 15.7m | ETA: 3.9m
+Epoch [16250/20000] | Total: 2.155092e-04 | PDE_u: 6.039322e-05 | PDE_v: 1.487516e-04 | IC: 5.046929e-08 | BC: 1.171923e-06 | Elapsed: 15.9m | ETA: 3.7m
+Epoch [16500/20000] | Total: 2.128403e-04 | PDE_u: 6.011318e-05 | PDE_v: 1.465740e-04 | IC: 4.958736e-08 | BC: 1.131460e-06 | Elapsed: 16.1m | ETA: 3.4m
+Epoch [16750/20000] | Total: 2.109852e-04 | PDE_u: 5.814156e-05 | PDE_v: 1.468535e-04 | IC: 4.940338e-08 | BC: 1.099223e-06 | Elapsed: 16.4m | ETA: 3.2m
+Epoch [17000/20000] | Total: 2.919481e-04 | PDE_u: 8.395720e-05 | PDE_v: 2.021316e-04 | IC: 5.843707e-08 | BC: 1.054968e-06 | Elapsed: 16.6m | ETA: 2.9m
+Epoch [17250/20000] | Total: 2.114683e-04 | PDE_u: 5.870577e-05 | PDE_v: 1.471591e-04 | IC: 4.579925e-08 | BC: 1.029094e-06 | Elapsed: 16.9m | ETA: 2.7m
+Epoch [17500/20000] | Total: 2.349194e-04 | PDE_u: 6.141131e-05 | PDE_v: 1.679012e-04 | IC: 5.087562e-08 | BC: 1.019629e-06 | Elapsed: 17.1m | ETA: 2.4m
+Epoch [17750/20000] | Total: 2.110782e-04 | PDE_u: 5.893196e-05 | PDE_v: 1.467474e-04 | IC: 4.292775e-08 | BC: 9.939133e-07 | Elapsed: 17.3m | ETA: 2.2m
+Epoch [18000/20000] | Total: 2.214683e-04 | PDE_u: 6.234300e-05 | PDE_v: 1.537807e-04 | IC: 4.218005e-08 | BC: 9.845758e-07 | Elapsed: 17.6m | ETA: 2.0m
+Epoch [18250/20000] | Total: 2.182967e-04 | PDE_u: 5.993660e-05 | PDE_v: 1.530175e-04 | IC: 4.716308e-08 | BC: 9.741856e-07 | Elapsed: 17.8m | ETA: 1.7m
+Epoch [18500/20000] | Total: 1.995853e-04 | PDE_u: 5.484993e-05 | PDE_v: 1.394833e-04 | IC: 4.439137e-08 | BC: 9.616213e-07 | Elapsed: 18.1m | ETA: 1.5m
+Epoch [18750/20000] | Total: 1.980558e-04 | PDE_u: 5.466701e-05 | PDE_v: 1.382599e-04 | IC: 4.373915e-08 | BC: 9.382875e-07 | Elapsed: 18.3m | ETA: 1.2m
+Epoch [19000/20000] | Total: 1.970152e-04 | PDE_u: 5.419796e-05 | PDE_v: 1.377839e-04 | IC: 4.219164e-08 | BC: 9.222909e-07 | Elapsed: 18.5m | ETA: 1.0m
+Epoch [19250/20000] | Total: 2.045352e-04 | PDE_u: 5.629467e-05 | PDE_v: 1.433002e-04 | IC: 3.854505e-08 | BC: 9.109606e-07 | Elapsed: 18.8m | ETA: 0.7m
+Epoch [19500/20000] | Total: 2.716884e-04 | PDE_u: 7.207595e-05 | PDE_v: 1.946159e-04 | IC: 5.066856e-08 | BC: 8.979796e-07 | Elapsed: 19.0m | ETA: 0.5m
+Epoch [19750/20000] | Total: 1.929855e-04 | PDE_u: 5.330893e-05 | PDE_v: 1.348101e-04 | IC: 4.158674e-08 | BC: 8.901235e-07 | Elapsed: 19.3m | ETA: 0.2m
+Epoch [20000/20000] | Total: 1.957468e-04 | PDE_u: 5.425113e-05 | PDE_v: 1.367016e-04 | IC: 4.021579e-08 | BC: 8.783846e-07 | Elapsed: 19.5m | ETA: 0.0m
+
+[PINN Training Complete] 20000 epochs in 1169.48 s (19.49 min).
+[Saved] Loss history saved to: /home/warley/vault/research/eu/paper3_turing_time_causality/data/loss_history_20000_epochs.npz
+[Saved] CSV loss log saved to: /home/warley/vault/research/eu/paper3_turing_time_causality/data/loss_history_20000_epochs.csv
+[Saved] Model weights saved to: /home/warley/vault/research/eu/paper3_turing_time_causality/assets/schnakenberg_pinn_20000epochs.pth
+
+[Step 3/3] Generating High-Resolution Side-by-Side Comparison Figures...
+  Saved Fig 1: /home/warley/vault/research/eu/paper3_turing_time_causality/figures/fig1_loss_convergence_20k.png
+  Saved Fig 2: /home/warley/vault/research/eu/paper3_turing_time_causality/figures/fig2_side_by_side_comparison_20k.png
+  Saved Fig 3: /home/warley/vault/research/eu/paper3_turing_time_causality/figures/fig3_profile_error_comparison_20k.png
+[Summary] Experiment summary written to: /home/warley/vault/research/eu/paper3_turing_time_causality/data/experiment_summary_20k.json
+
+============================================================
+EXPERIMENT COMPLETED SUCCESSFULLY!
+Final PINN Loss: 1.957468e-04
+Relative L2 Error at t=2.0s: 0.6085 (100% Failure to Form Patterns)
+Ground truth spot amplitude: [0.2134, 2.8305]
+PINN predicted field range:   [0.8994, 0.9001]
+============================================================

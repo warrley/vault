@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[1] Config.pm:331> INFO - Logfile is 'paper2_heat_irregular_pinn_adi.blg'
+[110] biber:342> INFO - === dom set 20, 2026, 15:38:03
+[129] Biber.pm:421> INFO - Reading 'paper2_heat_irregular_pinn_adi.bcf'
+[258] Biber.pm:1002> INFO - Found 7 citekeys in bib section 0
+[281] Biber.pm:4487> INFO - Processing section 0
+[299] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[301] bibtex.pm:1713> INFO - LaTeX decoding ...
+[336] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[494] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[495] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[495] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[495] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[517] bbl.pm:676> INFO - Writing 'paper2_heat_irregular_pinn_adi.bbl' with encoding 'UTF-8'
+[525] bbl.pm:779> INFO - Output to paper2_heat_irregular_pinn_adi.bbl

@@ -1,0 +1,176 @@
+================================================================================
+ORQUESTRADOR DE EXPERIMENTOS PINN — PAPER 1 (HEAT & BURGERS 2D)
+================================================================================
+Interpretador Python: /home/warley/.venv/pinn-gpu/bin/python3
+
+[ETAPA 1/2] Iniciando Treinamento e Avaliação: Equação do Calor 2D...
+===========================================================================
+PINN 2D HEAT EQUATION — HIGH RESOLUTION TRAINING (20,000 EPOCHS)
+===========================================================================
+Dispositivo de Treinamento: cuda (NVIDIA GeForce RTX 3050 Laptop GPU)
+Alpha: 0.1 | Domínio: [0, 1.0]^2 | Tempo: [0, 1.0]
+Pesos de Perda: lambda_pde=1.0, lambda_ic=20.0, lambda_bc=20.0
+Pontos: N_f=12000, N_0=3000, N_b=2400 | Log a cada 20 épocas
+
+Iniciando treinamento da PINN (20000 épocas)...
+/home/warley/.venv/pinn-gpu/lib/python3.11/site-packages/torch/autograd/graph.py:825: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at ../aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[    1/20000 (  0.0%)] | Total: 4.60609e+00 | PDE: 3.77322e-01 | IC: 1.48062e-01 | BC: 6.33758e-02 | lr: 1.00e-03 | 0.2s
+[  500/20000 (  2.5%)] | Total: 4.33592e-02 | PDE: 1.97391e-02 | IC: 6.77839e-04 | BC: 5.03167e-04 | lr: 9.98e-04 | 9.0s
+[ 1000/20000 (  5.0%)] | Total: 9.87407e-02 | PDE: 6.77550e-03 | IC: 2.19575e-03 | BC: 2.40251e-03 | lr: 9.94e-04 | 17.8s
+[ 1500/20000 (  7.5%)] | Total: 4.19508e-03 | PDE: 2.86239e-03 | IC: 3.53329e-05 | BC: 3.13019e-05 | lr: 9.86e-04 | 26.7s
+[ 2000/20000 ( 10.0%)] | Total: 3.05981e-02 | PDE: 2.08826e-03 | IC: 7.06549e-04 | BC: 7.18944e-04 | lr: 9.76e-04 | 35.6s
+[ 2500/20000 ( 12.5%)] | Total: 1.82077e-03 | PDE: 1.38380e-03 | IC: 1.15163e-05 | BC: 1.03322e-05 | lr: 9.62e-04 | 45.2s
+[ 3000/20000 ( 15.0%)] | Total: 1.37116e-03 | PDE: 1.06188e-03 | IC: 8.09104e-06 | BC: 7.37270e-06 | lr: 9.46e-04 | 54.3s
+[ 3500/20000 ( 17.5%)] | Total: 1.14838e-03 | PDE: 8.84781e-04 | IC: 6.69254e-06 | BC: 6.48728e-06 | lr: 9.27e-04 | 63.5s
+[ 4000/20000 ( 20.0%)] | Total: 9.17366e-04 | PDE: 7.22436e-04 | IC: 4.90639e-06 | BC: 4.84009e-06 | lr: 9.05e-04 | 72.3s
+[ 4500/20000 ( 22.5%)] | Total: 2.24491e-03 | PDE: 6.09860e-04 | IC: 4.14019e-05 | BC: 4.03506e-05 | lr: 8.81e-04 | 81.1s
+[ 5000/20000 ( 25.0%)] | Total: 6.55882e-04 | PDE: 5.21339e-04 | IC: 3.18805e-06 | BC: 3.53909e-06 | lr: 8.55e-04 | 90.0s
+[ 5500/20000 ( 27.5%)] | Total: 5.79488e-04 | PDE: 4.62345e-04 | IC: 2.69527e-06 | BC: 3.16186e-06 | lr: 8.26e-04 | 98.8s
+[ 6000/20000 ( 30.0%)] | Total: 4.04268e-02 | PDE: 4.64455e-04 | IC: 1.04141e-03 | BC: 9.56709e-04 | lr: 7.96e-04 | 107.7s
+[ 6500/20000 ( 32.5%)] | Total: 4.55053e-04 | PDE: 3.65897e-04 | IC: 1.97230e-06 | BC: 2.48551e-06 | lr: 7.64e-04 | 116.6s
+[ 7000/20000 ( 35.0%)] | Total: 2.19821e-03 | PDE: 3.26425e-04 | IC: 4.99577e-05 | BC: 4.36316e-05 | lr: 7.30e-04 | 125.5s
+[ 7500/20000 ( 37.5%)] | Total: 3.64310e-04 | PDE: 2.95217e-04 | IC: 1.50104e-06 | BC: 1.95365e-06 | lr: 6.94e-04 | 134.4s
+[ 8000/20000 ( 40.0%)] | Total: 3.31818e-04 | PDE: 2.69435e-04 | IC: 1.34536e-06 | BC: 1.77379e-06 | lr: 6.58e-04 | 143.3s
+[ 8500/20000 ( 42.5%)] | Total: 3.19230e-04 | PDE: 2.46664e-04 | IC: 1.68282e-06 | BC: 1.94549e-06 | lr: 6.21e-04 | 152.3s
+[ 9000/20000 ( 45.0%)] | Total: 2.77704e-04 | PDE: 2.26123e-04 | IC: 1.09220e-06 | BC: 1.48683e-06 | lr: 5.82e-04 | 161.6s
+[ 9500/20000 ( 47.5%)] | Total: 3.89661e-04 | PDE: 2.10013e-04 | IC: 4.51380e-06 | BC: 4.46861e-06 | lr: 5.44e-04 | 171.6s
+[10000/20000 ( 50.0%)] | Total: 2.41346e-04 | PDE: 1.92939e-04 | IC: 1.00684e-06 | BC: 1.41348e-06 | lr: 5.05e-04 | 181.0s
+[10500/20000 ( 52.5%)] | Total: 1.71804e-03 | PDE: 1.98906e-04 | IC: 3.53932e-05 | BC: 4.05635e-05 | lr: 4.66e-04 | 190.2s
+[11000/20000 ( 55.0%)] | Total: 2.02880e-04 | PDE: 1.65217e-04 | IC: 7.73608e-07 | BC: 1.10951e-06 | lr: 4.28e-04 | 199.2s
+[11500/20000 ( 57.5%)] | Total: 1.87683e-04 | PDE: 1.52826e-04 | IC: 7.13972e-07 | BC: 1.02888e-06 | lr: 3.89e-04 | 208.2s
+[12000/20000 ( 60.0%)] | Total: 1.75520e-04 | PDE: 1.42409e-04 | IC: 6.85414e-07 | BC: 9.70170e-07 | lr: 3.52e-04 | 217.2s
+[12500/20000 ( 62.5%)] | Total: 1.63945e-04 | PDE: 1.33200e-04 | IC: 6.23348e-07 | BC: 9.13905e-07 | lr: 3.16e-04 | 226.1s
+[13000/20000 ( 65.0%)] | Total: 1.52942e-04 | PDE: 1.24592e-04 | IC: 5.74489e-07 | BC: 8.43002e-07 | lr: 2.80e-04 | 235.4s
+[13500/20000 ( 67.5%)] | Total: 3.14106e-04 | PDE: 1.17764e-04 | IC: 5.13550e-06 | BC: 4.68160e-06 | lr: 2.46e-04 | 244.6s
+[14000/20000 ( 70.0%)] | Total: 1.34563e-04 | PDE: 1.09638e-04 | IC: 5.05351e-07 | BC: 7.40900e-07 | lr: 2.14e-04 | 254.6s
+[14500/20000 ( 72.5%)] | Total: 1.27140e-04 | PDE: 1.03341e-04 | IC: 4.81667e-07 | BC: 7.08313e-07 | lr: 1.84e-04 | 263.8s
+[15000/20000 ( 75.0%)] | Total: 1.19650e-04 | PDE: 9.74996e-05 | IC: 4.49775e-07 | BC: 6.57732e-07 | lr: 1.55e-04 | 272.8s
+[15500/20000 ( 77.5%)] | Total: 1.13238e-04 | PDE: 9.22673e-05 | IC: 4.25742e-07 | BC: 6.22774e-07 | lr: 1.29e-04 | 281.9s
+[16000/20000 ( 80.0%)] | Total: 1.09934e-04 | PDE: 8.75006e-05 | IC: 4.86013e-07 | BC: 6.35643e-07 | lr: 1.05e-04 | 291.6s
+[16500/20000 ( 82.5%)] | Total: 1.02097e-04 | PDE: 8.31855e-05 | IC: 3.85660e-07 | BC: 5.59925e-07 | lr: 8.29e-05 | 300.7s
+[17000/20000 ( 85.0%)] | Total: 9.72953e-05 | PDE: 7.92621e-05 | IC: 3.68301e-07 | BC: 5.33360e-07 | lr: 6.40e-05 | 309.7s
+[17500/20000 ( 87.5%)] | Total: 9.30252e-05 | PDE: 7.57716e-05 | IC: 3.52838e-07 | BC: 5.09842e-07 | lr: 4.77e-05 | 318.8s
+[18000/20000 ( 90.0%)] | Total: 8.93328e-05 | PDE: 7.27529e-05 | IC: 3.39483e-07 | BC: 4.89514e-07 | lr: 3.42e-05 | 327.8s
+[18500/20000 ( 92.5%)] | Total: 8.62308e-05 | PDE: 7.02161e-05 | IC: 3.28238e-07 | BC: 4.72496e-07 | lr: 2.37e-05 | 336.9s
+[19000/20000 ( 95.0%)] | Total: 8.36752e-05 | PDE: 6.81262e-05 | IC: 3.18968e-07 | BC: 4.58481e-07 | lr: 1.61e-05 | 346.0s
+[19500/20000 ( 97.5%)] | Total: 8.15301e-05 | PDE: 6.63723e-05 | IC: 3.11166e-07 | BC: 4.46728e-07 | lr: 1.15e-05 | 355.0s
+[20000/20000 (100.0%)] | Total: 7.94948e-05 | PDE: 6.47078e-05 | IC: 3.03757e-07 | BC: 4.35591e-07 | lr: 1.00e-05 | 364.7s
+
+Treinamento concluído em 364.65 s (6.08 min).
+Tempo médio por época: 18.23 ms/época.
+[OK] Modelo salvo com sucesso em: ./paper1_heat_burgers/models/pinn_heat_2d_20k.pth
+
+===========================================================================
+RELATÓRIO DE DESEMPENHO CIENTÍFICO — CALOR 2D (t = 0.5s)
+===========================================================================
+Perda Total Final:               7.94948e-05
+Resíduo PDE Final:               6.47078e-05
+Erro Médio Quadrático (MSE):    6.67185e-08
+Erro Máximo (L_inf):             1.28733e-03
+Erro Relativo L2:                1.40007e-03 (0.140%)
+Tempo de Treinamento Total:      364.65 s (18.23 ms/época)
+Latência de Inferência (10.000 pts): 2.87 ms
+===========================================================================
+
+>>> LINHA PARA A TABELA LATEX DO ARTIGO:
+Calor 2D (Analítico) & 20.000 & 7.95e-05 & 1.40e-03 & 1.29e-03 & 2.87\,ms \\
+/home/warley/vault/research/eu/paper1_heat_burgers/src/train_heat_2d.py:312: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+[OK] Figuras da Equação do Calor salvas em ./paper1_heat_burgers/figures
+[CONCLUÍDO] Calor 2D finalizado com sucesso em 371.48s (6.19 min).
+
+--------------------------------------------------------------------------------
+[ETAPA 2/2] Iniciando Treinamento e Avaliação: Equação de Burgers 2D...
+===========================================================================
+PINN 2D VISCOUS BURGERS EQUATION — HIGH RESOLUTION TRAINING (20,000 EPOCHS)
+===========================================================================
+Dispositivo de Treinamento: cuda (NVIDIA GeForce RTX 3050 Laptop GPU)
+Viscosidade nu: 0.01 | Domínio: [-1.0, 1.0]^2 | Tempo: [0, 1.0]
+Pesos de Perda: lambda_pde=1.0, lambda_ic=20.0, lambda_bc=20.0
+Pontos: N_f=14000, N_0=3500, N_b=2800 | Log a cada 20 épocas
+
+Iniciando treinamento da PINN Burgers 2D (20000 épocas)...
+[    1/20000 (  0.0%)] | Total: 6.89945e+00 | PDE: 2.68748e-02 | IC: 1.86516e-01 | BC: 1.57113e-01 | lr: 1.00e-03 | 0.2s
+[  500/20000 (  2.5%)] | Total: 1.60823e-01 | PDE: 5.17134e-02 | IC: 4.67160e-03 | BC: 7.83887e-04 | lr: 9.98e-04 | 21.7s
+[ 1000/20000 (  5.0%)] | Total: 9.10107e-02 | PDE: 3.57297e-02 | IC: 2.39924e-03 | BC: 3.64809e-04 | lr: 9.94e-04 | 42.8s
+[ 1500/20000 (  7.5%)] | Total: 6.24087e-02 | PDE: 3.32704e-02 | IC: 1.19943e-03 | BC: 2.57485e-04 | lr: 9.86e-04 | 63.9s
+[ 2000/20000 ( 10.0%)] | Total: 4.08963e-02 | PDE: 2.82285e-02 | IC: 5.51987e-04 | BC: 8.14069e-05 | lr: 9.76e-04 | 85.0s
+[ 2500/20000 ( 12.5%)] | Total: 2.93399e-02 | PDE: 2.20097e-02 | IC: 3.14843e-04 | BC: 5.16683e-05 | lr: 9.62e-04 | 106.7s
+[ 3000/20000 ( 15.0%)] | Total: 2.14266e-02 | PDE: 1.65683e-02 | IC: 2.08640e-04 | BC: 3.42738e-05 | lr: 9.46e-04 | 127.9s
+[ 3500/20000 ( 17.5%)] | Total: 1.82541e-02 | PDE: 1.23410e-02 | IC: 2.06423e-04 | BC: 8.92333e-05 | lr: 9.27e-04 | 149.0s
+[ 4000/20000 ( 20.0%)] | Total: 1.30429e-02 | PDE: 9.58045e-03 | IC: 1.38585e-04 | BC: 3.45358e-05 | lr: 9.05e-04 | 170.0s
+[ 4500/20000 ( 22.5%)] | Total: 1.00028e-02 | PDE: 7.59561e-03 | IC: 1.03933e-04 | BC: 1.64268e-05 | lr: 8.81e-04 | 191.1s
+[ 5000/20000 ( 25.0%)] | Total: 3.05544e-02 | PDE: 6.54814e-03 | IC: 5.91560e-04 | BC: 6.08754e-04 | lr: 8.55e-04 | 212.2s
+[ 5500/20000 ( 27.5%)] | Total: 6.90245e-03 | PDE: 5.18812e-03 | IC: 7.32775e-05 | BC: 1.24390e-05 | lr: 8.26e-04 | 233.6s
+[ 6000/20000 ( 30.0%)] | Total: 5.84701e-03 | PDE: 4.38872e-03 | IC: 6.19377e-05 | BC: 1.09766e-05 | lr: 7.96e-04 | 254.5s
+[ 6500/20000 ( 32.5%)] | Total: 5.16198e-03 | PDE: 3.77472e-03 | IC: 5.60607e-05 | BC: 1.33025e-05 | lr: 7.64e-04 | 275.8s
+[ 7000/20000 ( 35.0%)] | Total: 5.62692e-03 | PDE: 3.33021e-03 | IC: 7.40155e-05 | BC: 4.08199e-05 | lr: 7.30e-04 | 297.0s
+[ 7500/20000 ( 37.5%)] | Total: 4.23096e-03 | PDE: 2.88513e-03 | IC: 5.01685e-05 | BC: 1.71229e-05 | lr: 6.94e-04 | 318.0s
+[ 8000/20000 ( 40.0%)] | Total: 3.59106e-03 | PDE: 2.58719e-03 | IC: 3.87702e-05 | BC: 1.14231e-05 | lr: 6.58e-04 | 339.0s
+[ 8500/20000 ( 42.5%)] | Total: 3.11995e-03 | PDE: 2.33678e-03 | IC: 3.15395e-05 | BC: 7.61879e-06 | lr: 6.21e-04 | 360.3s
+[ 9000/20000 ( 45.0%)] | Total: 2.80599e-03 | PDE: 2.12327e-03 | IC: 2.79115e-05 | BC: 6.22418e-06 | lr: 5.82e-04 | 381.3s
+[ 9500/20000 ( 47.5%)] | Total: 2.72040e-03 | PDE: 1.95133e-03 | IC: 2.92551e-05 | BC: 9.19842e-06 | lr: 5.44e-04 | 402.5s
+[10000/20000 ( 50.0%)] | Total: 2.38888e-03 | PDE: 1.79850e-03 | IC: 2.37775e-05 | BC: 5.74156e-06 | lr: 5.05e-04 | 423.9s
+[10500/20000 ( 52.5%)] | Total: 2.21016e-03 | PDE: 1.67428e-03 | IC: 2.16348e-05 | BC: 5.15905e-06 | lr: 4.66e-04 | 446.1s
+[11000/20000 ( 55.0%)] | Total: 2.06481e-03 | PDE: 1.56672e-03 | IC: 2.00473e-05 | BC: 4.85711e-06 | lr: 4.28e-04 | 468.1s
+[11500/20000 ( 57.5%)] | Total: 1.96926e-03 | PDE: 1.47427e-03 | IC: 1.92424e-05 | BC: 5.50693e-06 | lr: 3.89e-04 | 489.6s
+[12000/20000 ( 60.0%)] | Total: 1.82965e-03 | PDE: 1.39197e-03 | IC: 1.75085e-05 | BC: 4.37527e-06 | lr: 3.52e-04 | 510.9s
+[12500/20000 ( 62.5%)] | Total: 1.75529e-03 | PDE: 1.32132e-03 | IC: 1.71292e-05 | BC: 4.56947e-06 | lr: 3.16e-04 | 532.2s
+[13000/20000 ( 65.0%)] | Total: 1.64935e-03 | PDE: 1.25782e-03 | IC: 1.55592e-05 | BC: 4.01737e-06 | lr: 2.80e-04 | 554.4s
+[13500/20000 ( 67.5%)] | Total: 1.57570e-03 | PDE: 1.20226e-03 | IC: 1.47551e-05 | BC: 3.91678e-06 | lr: 2.46e-04 | 575.4s
+[14000/20000 ( 70.0%)] | Total: 2.35901e-03 | PDE: 1.16624e-03 | IC: 3.32879e-05 | BC: 2.63507e-05 | lr: 2.14e-04 | 596.6s
+[14500/20000 ( 72.5%)] | Total: 1.47996e-03 | PDE: 1.10796e-03 | IC: 1.42894e-05 | BC: 4.31090e-06 | lr: 1.84e-04 | 617.7s
+[15000/20000 ( 75.0%)] | Total: 1.38230e-03 | PDE: 1.06612e-03 | IC: 1.25536e-05 | BC: 3.25544e-06 | lr: 1.55e-04 | 639.1s
+[15500/20000 ( 77.5%)] | Total: 1.44038e-03 | PDE: 1.03090e-03 | IC: 1.42579e-05 | BC: 6.21573e-06 | lr: 1.29e-04 | 660.3s
+[16000/20000 ( 80.0%)] | Total: 1.28269e-03 | PDE: 9.94784e-04 | IC: 1.14123e-05 | BC: 2.98276e-06 | lr: 1.05e-04 | 681.5s
+[16500/20000 ( 82.5%)] | Total: 1.24023e-03 | PDE: 9.63167e-04 | IC: 1.09537e-05 | BC: 2.89922e-06 | lr: 8.29e-05 | 703.1s
+[17000/20000 ( 85.0%)] | Total: 1.19861e-03 | PDE: 9.34443e-04 | IC: 1.04599e-05 | BC: 2.74824e-06 | lr: 6.40e-05 | 725.3s
+[17500/20000 ( 87.5%)] | Total: 1.16221e-03 | PDE: 9.08327e-04 | IC: 1.00484e-05 | BC: 2.64586e-06 | lr: 4.77e-05 | 747.9s
+[18000/20000 ( 90.0%)] | Total: 1.13029e-03 | PDE: 8.85403e-04 | IC: 9.68825e-06 | BC: 2.55594e-06 | lr: 3.42e-05 | 770.7s
+[18500/20000 ( 92.5%)] | Total: 1.10314e-03 | PDE: 8.65893e-04 | IC: 9.38286e-06 | BC: 2.47954e-06 | lr: 2.37e-05 | 794.9s
+[19000/20000 ( 95.0%)] | Total: 1.08059e-03 | PDE: 8.49665e-04 | IC: 9.12968e-06 | BC: 2.41634e-06 | lr: 1.61e-05 | 820.7s
+[19500/20000 ( 97.5%)] | Total: 1.06153e-03 | PDE: 8.35944e-04 | IC: 8.91631e-06 | BC: 2.36308e-06 | lr: 1.15e-05 | 846.2s
+[20000/20000 (100.0%)] | Total: 1.04338e-03 | PDE: 8.22856e-04 | IC: 8.71351e-06 | BC: 2.31262e-06 | lr: 1.00e-05 | 871.6s
+
+Treinamento concluído em 871.61 s (14.53 min).
+Tempo médio por época: 43.58 ms/época.
+[OK] Modelo salvo com sucesso em: ./paper1_heat_burgers/models/pinn_burgers_2d_20k.pth
+
+Gerando solução de referência numérica de alta resolução (t = 0.5s)...
+
+===========================================================================
+RELATÓRIO DE DESEMPENHO CIENTÍFICO — BURGERS 2D (t = 0.5s)
+===========================================================================
+Perda Total Final:               1.04338e-03
+Resíduo PDE Final:               8.22856e-04
+Erro Médio Quadrático (MSE |U|): 1.24620e-05
+Erro Máximo (L_inf |U|):         4.65833e-02
+Erro Relativo L2 (|U|):          1.72614e-02 (1.726%)
+Erro Relativo L2 (u):            2.27054e-02
+Erro Relativo L2 (v):            2.27084e-02
+Energia Cinética Total E(t=0.5): 8.31245e-02
+Tempo de Treinamento Total:      871.61 s (43.58 ms/época)
+Latência de Inferência (10.000 pts): 1.12 ms
+===========================================================================
+
+>>> LINHA PARA A TABELA LATEX DO ARTIGO:
+Burgers 2D (Viscoso) & 20.000 & 1.04e-03 & 1.73e-02 & 4.66e-02 & 1.12\,ms \\
+/home/warley/vault/research/eu/paper1_heat_burgers/src/train_burgers_2d.py:401: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+/home/warley/vault/research/eu/paper1_heat_burgers/src/train_burgers_2d.py:459: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+[OK] Figuras da Equação de Burgers salvas em ./paper1_heat_burgers/figures
+[CONCLUÍDO] Burgers 2D finalizado com sucesso em 882.11s (14.70 min).
+
+================================================================================
+EXECUÇÃO COMPLETA DE TODOS OS MODELOS FINALIZADA COM SUCESSO!
+================================================================================
+Tempo Total de Processamento: 1253.58 s (20.89 min)
+  - Tempo Calor 2D:    371.48 s (6.19 min)
+  - Tempo Burgers 2D:  882.11 s (14.70 min)
+
+Artefatos gerados:
+  - Modelos (.pth): ./paper1_heat_burgers/models/
+  - Figuras (.pdf / .png): ./paper1_heat_burgers/figures/
+================================================================================

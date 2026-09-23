@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'paper3.1_turing_time_causality.blg'
+[50] biber:342> INFO - === dom set 20, 2026, 12:05:06
+[61] Biber.pm:421> INFO - Reading 'paper3.1_turing_time_causality.bcf'
+[113] Biber.pm:1002> INFO - Found 11 citekeys in bib section 0
+[123] Biber.pm:4487> INFO - Processing section 0
+[130] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[131] bibtex.pm:1713> INFO - LaTeX decoding ...
+[145] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[231] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[231] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[231] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[231] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[242] bbl.pm:676> INFO - Writing 'paper3.1_turing_time_causality.bbl' with encoding 'UTF-8'
+[247] bbl.pm:779> INFO - Output to paper3.1_turing_time_causality.bbl

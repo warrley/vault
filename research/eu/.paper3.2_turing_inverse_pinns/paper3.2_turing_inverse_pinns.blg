@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'paper3.2_turing_inverse_pinns.blg'
+[58] biber:342> INFO - === dom set 20, 2026, 08:57:15
+[68] Biber.pm:421> INFO - Reading 'paper3.2_turing_inverse_pinns.bcf'
+[111] Biber.pm:1002> INFO - Found 6 citekeys in bib section 0
+[119] Biber.pm:4487> INFO - Processing section 0
+[126] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[126] bibtex.pm:1713> INFO - LaTeX decoding ...
+[139] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[180] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[181] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[181] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[181] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[185] bbl.pm:676> INFO - Writing 'paper3.2_turing_inverse_pinns.bbl' with encoding 'UTF-8'
+[186] bbl.pm:779> INFO - Output to paper3.2_turing_inverse_pinns.bbl

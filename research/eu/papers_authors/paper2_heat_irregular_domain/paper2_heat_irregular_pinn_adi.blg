@@ -1,0 +1,19 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'paper2_heat_irregular_pinn_adi.blg'
+[67] biber:342> INFO - === seg set 21, 2026, 00:20:27
+[82] Biber.pm:421> INFO - Reading 'paper2_heat_irregular_pinn_adi.bcf'
+[145] Biber.pm:1002> INFO - Found 3 citekeys in bib section 0
+[160] Biber.pm:4487> INFO - Processing section 0
+[168] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[169] bibtex.pm:1713> INFO - LaTeX decoding ...
+[173] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[215] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[215] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[215] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
+[215] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[226] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[226] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[226] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[226] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[233] bbl.pm:676> INFO - Writing 'paper2_heat_irregular_pinn_adi.bbl' with encoding 'UTF-8'
+[236] bbl.pm:779> INFO - Output to paper2_heat_irregular_pinn_adi.bbl

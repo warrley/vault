@@ -1,184 +1,263 @@
-%% estilo.sty
-%% Estilo oficial dos Encontros Universitários — Campus da UFC em Quixadá
-%% Versão 2026 — reproduzido a partir do modelo Prism disponibilizado pela
-%% Comissão Organizadora (Edital n.º 04/2026)
-%%
-%% Garantia de conformidade com:
-%%   · Guia de Normalização de Artigo em Publicação Periódica Científica (UFC)
-%%   · ABNT NBR 6022:2018
-%%   · ABNT NBR 6023:2018 (referências bibliográficas)
+% 2024 - PPGE/FURG
+% - Alisson T. G. Fiorentin, [alisson.fiorentin@gmail.com](mailto\:alisson.fiorentin@gmail.com)
+% 2025 - Ago - UFC Quixadá
+% - David Sena Oliveira, [sena@ufc.br](mailto\:sena@ufc.br)
+% - Paulo de Tarso Guerra, [paulodetarso@ufc.br](mailto\:paulodetarso@ufc.br)
+% 2026 - Ago - UFC Quixadá
+% - David Sena Oliveira, [sena@ufc.br](mailto\:sena@ufc.br)
+%%%%%%%%%%%%%%%%%%%%%%%% CONFIGURAÇÕES DE INICIO DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+% 1. Codificação e idioma
+%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[T1]{fontenc}       % Codificação correta para hifenização
+\RequirePackage[utf8]{inputenc}    % Permite acentos no código-fonte
+\RequirePackage[brazilian]{babel}  % Português do Brasil
 
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{estilo}[2026/08/01 v2.1 Estilo EU UFC Quixada]
+%%%%%%%%%%%%%%%%%%%%%
+% 2. Tipografia e fontes
+%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{lmodern}           % Fonte Latin Modern
+\RequirePackage{times}             % Times New Roman
+\RequirePackage{microtype}         % Ajustes finos de tipografia
+\RequirePackage{setspace}          % Controle de espaçamento
+\RequirePackage{ragged2e}          % Justificação personalizada
+\RequirePackage{mfirstuc}          % Primeira letra maiúscula em títulos
+\RequirePackage[hang,flushmargin]{footmisc} % Notas de rodapé sem recuo
 
-% ─── FONTES E CODIFICAÇÃO ────────────────────────────────────────────────────
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage{mathptmx}          % Times New Roman texto + math
-\RequirePackage[scaled=0.92]{helvet}
-\RequirePackage{courier}
+%%%%%%%%%%%%%%%%%%%%%
+% 3. Matemática
+%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{amsfonts,amsmath,amssymb}
 
-% ─── IDIOMA ──────────────────────────────────────────────────────────────────
-\RequirePackage[english,brazilian]{babel}
-\RequirePackage{csquotes}           % \enquote{}
+%%%%%%%%%%%%%%%%%%%%%
+% 4. Layout e margens
+%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[inner=2.5cm, outer=2.5cm, top=3cm, bottom=2cm, headheight=40pt, headsep=18pt]{geometry}
+\RequirePackage{indentfirst}       % Indentação no primeiro parágrafo
+\RequirePackage{fancyhdr}          % Cabeçalhos e rodapés
+\RequirePackage{titlesec}          % Formatação de títulos
+\RequirePackage{changepage}        % Ajustes de largura de blocos
+\RequirePackage{ifoddpage}         % Condicional páginas pares/ímpares
+\RequirePackage{float}             % Controle de floats
+\RequirePackage{caption}           % Legendas customizadas
+\RequirePackage{eso-pic} 
 
-% ─── GEOMETRIA ───────────────────────────────────────────────────────────────
-\RequirePackage[
-  a4paper,
-  left   = 3.0cm,
-  right  = 3.0cm,
-  top    = 2.5cm,
-  bottom = 2.0cm,
-  headheight = 14.5pt
-]{geometry}
+%%%%%%%%%%%%%%%%%%%%%
+% 5. Figuras, tabelas e gráficos
+%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{graphicx}          % Inclusão de imagens
+\RequirePackage{booktabs}          % Tabelas profissionais
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{url,xurl}          % URLs
+\RequirePackage{nomencl}           % Lista de símbolos
+\RequirePackage{lipsum}            % Texto de exemplo
+\RequirePackage{svg}
 
-% ─── ESPAÇAMENTO ─────────────────────────────────────────────────────────────
-\RequirePackage{setspace}
-\setstretch{1.25}
-\setlength{\parindent}{1.25cm}
-\setlength{\parskip}{0pt}
+% Redefine o ambiente de lipsum
+\let\oldlipsum\lipsum
+\renewcommand{\lipsum}[1][1]{\textcolor{gray!50}{\oldlipsum[#1]}}
 
-% ─── CORES ───────────────────────────────────────────────────────────────────
-\RequirePackage{xcolor}
+%%%%%%%%%%%%%%%%%%%%%
+% 6. Códigos e pseudocódigos e citações
+%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{fvextra}           % Extensões para verbatim (necessário pro minted)
+%\RequirePackage{minted}            % Código com destaque de sintaxe
+\RequirePackage[portuguese,ruled,vlined,linesnumbered]{algorithm2e}
+\RequirePackage{csquotes}          % Aspas e citações multilíngues
 
-% ─── MATEMÁTICA ──────────────────────────────────────────────────────────────
-\RequirePackage{amsmath,amssymb,amsfonts}
-\RequirePackage{bm}
+%%%%%%%%%%%%%%%%%%%%%
+% 7. Bibliografia
+%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[style=abnt, backend=biber, url=true, doi=false, language=auto]{biblatex}
+\addbibresource{referencias.bib}
+\renewcommand{\mkbibnamefamily}[1]{#1}               % Para deixar o nome em minúsculo na citação
+\DeclareFieldFormat{url}{Disponível em \url{#1}}     % Remova os símbolos <> que encapsulam as URLs
 
-% ─── MICROTYPE ───────────────────────────────────────────────────────────────
-\RequirePackage{microtype}
-
-% ─── INDENTAÇÃO DO PRIMEIRO PARÁGRAFO ────────────────────────────────────────
-\RequirePackage{indentfirst}
-
-% ─── HIPERLINKS ──────────────────────────────────────────────────────────────
-\RequirePackage[hidelinks,colorlinks=false]{hyperref}
-\RequirePackage{url}
-
-% ─── GRÁFICOS, TABELAS E LEGENDAS ────────────────────────────────────────────
-\RequirePackage{graphicx}
-\RequirePackage{booktabs}
-\RequirePackage{longtable}
-\RequirePackage{caption}
-\RequirePackage{subcaption}
-\RequirePackage{float}
-
-% Formato de legenda conforme ABNT: "Figura X — Título"
-\DeclareCaptionLabelSeparator{emdash}{\space---\space}
-\captionsetup{
-  labelsep       = emdash,
-  font           = small,
-  labelfont      = {bf},
-  justification  = raggedright,
-  singlelinecheck= false,
-  skip           = 4pt
+\let\oldprintbibliography\printbibliography
+\renewcommand{\printbibliography}[1][]{%
+    \vspace{-0.5em}
+    \qcentersection{referências}
+    \vspace{-0.2em}
+    \begingroup
+        \small
+        \setlength{\bibitemsep}{0.25em}         % espaçamento entre entradas
+        \oldprintbibliography[heading=none]              % chama o comando original
+    \endgroup
 }
-\captionsetup[table]{position=top}
-\captionsetup[figure]{position=top}
 
-% ─── LISTAS ──────────────────────────────────────────────────────────────────
-\RequirePackage{enumitem}
-\setlist{noitemsep, topsep=4pt, parsep=0pt}
+%%%%%%%%%%%%%%%%%%%%%
+% 8. CONFIGURAÇÕES E COMANDOS LOCAIS
+%%%%%%%%%%%%%%%%%%%%%
 
-% ─── ALGORITMOS ──────────────────────────────────────────────────────────────
-\RequirePackage[ruled,vlined,linesnumbered,portuguese]{algorithm2e}
-\SetAlCapFnt{\small\bfseries}
-\SetAlCapNameFnt{\small\bfseries}
-\SetAlFnt{\small}
+% ===============================================================
+% Espaçamento de floats como imagens e figuras
+% ===============================================================
+\setlength{\textfloatsep}{1.0cm}
+\setlength{\intextsep}{1.0cm}
 
-% ─── CABEÇALHO / RODAPÉ ──────────────────────────────────────────────────────
-\RequirePackage{fancyhdr}
-\pagestyle{fancy}
+% ===============================================================
+% Configuração de página
+% ===============================================================
+% Numeração das páginas a partir da segunda página
 \fancyhf{}
-\fancyfoot[C]{\thepage}
+\rhead{\thepage}
+\cfoot{}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancypagestyle{plain}{%
-  \fancyhf{}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+
+% Primeira página sem cabeçalho/numeração do fancyhdr
+\fancypagestyle{firstpage}{%
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
 }
 
-% ─── SEÇÕES — ABNT NBR 6022:2018 ─────────────────────────────────────────────
-\RequirePackage{titlesec}
-
-% Seção primária: negrito, caixa alta, numerada
+% ===============================================================
+% Títulos
+% ===============================================================
 \titleformat{\section}
-  {\normalfont\normalsize\bfseries}
-  {\thesection}
-  {1em}
-  {\MakeUppercase}
-\titlespacing*{\section}{0pt}{1.8ex plus .3ex minus .2ex}{0.8ex plus .1ex}
-
-% Seção secundária: negrito
+  {\normalfont\fontsize{12}{12}\bfseries\MakeUppercase}
+  {\thesection}{0.5em}{}
+  
 \titleformat{\subsection}
-  {\normalfont\normalsize\bfseries}
-  {\thesubsection}
-  {1em}
-  {}
-\titlespacing*{\subsection}{0pt}{1.4ex plus .2ex minus .1ex}{0.5ex plus .1ex}
+  {\normalfont\fontsize{12}{12}\bfseries}
+  {\thesubsection}{0.5em}{}
 
-% Seção terciária: itálico
 \titleformat{\subsubsection}
-  {\normalfont\normalsize\itshape}
-  {\thesubsubsection}
-  {1em}
-  {}
-\titlespacing*{\subsubsection}{0pt}{1.2ex plus .2ex minus .1ex}{0.4ex plus .1ex}
+  {\normalfont\fontsize{12}{12}\bfseries\itshape}
+  {\thesubsubsection}{0.5em}{}
 
-% ─── REFERÊNCIAS — BIBLATEX + ABNT ───────────────────────────────────────────
-\RequirePackage[
-  backend     = biber,
-  style       = numeric-comp,
-  sorting     = nyt,
-  maxnames    = 3,
-  minnames    = 1,
-  giveninits  = true,
-  doi         = false,
-  url         = false,
-  isbn        = false,
-  language    = brazilian
-]{biblatex}
+% ===============================================================
+% Redefinição de citação longa no estilo ABNT
+% ===============================================================
+\let\oldquote\quote
+\let\endoldquote\endquote
+\renewenvironment{quote}
+  {\par\vspace{0.3cm}\fontsize{10pt}{12pt}\selectfont\begin{adjustwidth}{4cm}{0pt}}
+  {\end{adjustwidth}\vspace{0.3cm}\par}
 
-% ─── MODO REVISÃO (coloração editorial, removível antes da submissão) ─────────
-\RequirePackage{etoolbox}
-\newbool{reviewenabled}
+% ===============================================================
+% Legendas de figuras, imagens e tabelas no topo
+% ===============================================================
+\DeclareCaptionFont{mycaptionfont}{\fontsize{10pt}{12pt}\selectfont}
+\DeclareCaptionLabelSeparator{myhyphen}{ --- }
+\captionsetup{font=mycaptionfont, labelsep=myhyphen}
+\floatname{listing}{Código}
 
-%% \EnableReviewColors  →  ativa as marcações coloridas de revisão
-\newcommand{\EnableReviewColors}{\booltrue{reviewenabled}}
 
-%% \reviewcolor{cor}{texto}  →  exibe texto colorido apenas se review ativo
-\newcommand{\reviewcolor}[2]{%
-  \ifbool{reviewenabled}{{\color{#1}#2}}{}%
+% ===============================================================
+% Criando comando authorinfo para emails de autores
+% ===============================================================
+
+\newcounter{authorfoot}
+\newcommand{\numtotext}[1]{%
+  \ifcase#1\relax
+    zero%
+  \or *% 1
+  \or **% 1
+  \or ***% 1
+  \or \textdagger% 2
+  \or \textdaggerdbl% 3
+  \or \textparagraph% 4
+  \or \S% 5
+  \or \textbardbl% 6
+  \or \# % 7
+  \or \textdagger\textdagger% 8
+  \or \textdaggerdbl\textdaggerdbl% 9
+  \or \textparagraph\textparagraph% 10
+  \else ???%
+  \fi
+}
+\newcommand{\authorinfo}[1]{%
+  \stepcounter{authorfoot}% incrementa contador
+  \begingroup
+    \renewcommand{\thefootnote}{\numtotext{\value{authorfoot}}}%
+    \footnote{#1}%
+  \endgroup
 }
 
-% ─── INFORMAÇÃO DO AUTOR ─────────────────────────────────────────────────────
-%% \authorinfo{email}  →  insere e-mail como nota de rodapé do autor
-\newcommand{\authorinfo}[1]{\thanks{#1}}
+% ===============================================================
+% Sobrescrevendo comando maketitle para formatar Título e Autor
+% ===============================================================
 
-% ─── \qabstract — BLOCO RESUMO / ABSTRACT PADRONIZADO ABNT ───────────────────
-%% \qabstract{RótuloSeção}{RótuloPalavrasChave}{RótuloODS}
-%%           {TextoDoResumo}{Palavras-chave}{ODS}
-\newcommand{\qabstract}[6]{%
-  \vspace{0.6em}%
-  \noindent{\normalfont\normalsize\bfseries\MakeUppercase{#1}}\par%
-  \vspace{0.3em}%
-  \noindent #4\par%
-  \vspace{0.4em}%
-  \noindent\textbf{#2:} #5\par%
-  \vspace{0.2em}%
-  \noindent\textbf{#3:} #6\par%
-  \vspace{1.0em}%
+\newcommand{\summaryheader}{%
+    \IfFileExists{figs/header.pdf}{%
+        \AddToShipoutPictureFG*{%
+            \AtPageUpperLeft{%
+                \raisebox{-\height}{%
+                    \includegraphics[width=\paperwidth]{figs/header.pdf}%
+                }%
+            }%
+        }%
+    }{}%
 }
 
-% ─── \qcentersection — SEÇÃO CENTRALIZADA SEM NUMERAÇÃO ──────────────────────
-%% \qcentersection{TÍTULO}  →  p. ex. AGRADECIMENTOS (opcional)
+
+\makeatletter
+\renewcommand{\maketitle}{%
+    \thispagestyle{firstpage}
+    \singlespacing
+    \summaryheader
+    \justifying
+    \setlength{\parindent}{2cm} % indentação do parágrafo
+    \vspace*{0.1cm}               % espaço vertical entre o topo e o título
+    \begin{center}
+    \textbf{\MakeUppercase{\@title}}
+    \end{center}
+    \begin{flushright}
+    \normalsize
+    \@author
+    \end{flushright}
+    \par
+}
+\makeatother
+
+% ===============================================================
+% Criando comando qcentersection para títulos de seção centralizada
+% ===============================================================
+
 \newcommand{\qcentersection}[1]{%
-  \vspace{1.5ex}%
-  \begin{center}%
-    {\normalfont\normalsize\bfseries\MakeUppercase{#1}}%
-  \end{center}%
-  \vspace{0.5ex}%
+    \vspace{0.1cm}
+    \begin{center}
+        \textbf{\MakeUppercase{#1}}
+    \end{center}
+    \vspace{0.1cm}
 }
 
-\endinput
+% ===============================================================
+% Criando comando qabstract para resumo e abstract
+% ===============================================================
+
+\newcommand{\qabstract}[6]{%
+    \begin{center}
+        \textbf{\MakeUppercase{#1}}
+    \end{center}
+    \noindent #4
+    
+    \vspace{0.5cm} % mantenha uma linha vazia antes dessa
+    \noindent \textbf{#2}: #5 \par
+    \noindent \textbf{#3}: #6 \par
+}
+
+
+% === Cores
+
+\colorlet{orange}{BrickRed}
+\colorlet{green}{ForestGreen}
+\colorlet{brown}{Sepia}
+\colorlet{blue}{NavyBlue}
+\colorlet{purple}{RoyalPurple}
+
+\newif\ifreview
+\reviewfalse
+
+\newcommand{\EnableReviewColors}{\reviewtrue}
+\newcommand{\DisableReviewColors}{\reviewfalse}
+
+\newcommand{\reviewcolor}[2]{%
+    \ifreview
+        {\color{#1}#2}%
+    \else
+        #2%
+    \fi
+    \ignorespaces
+}

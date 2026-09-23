@@ -1,0 +1,166 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{instrumento2026}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb2274b4a6eb5ba40d95f0ed4ac9f410}{%
+           family={Autor\bibnamedelimb ou\bibnamedelima Organização},
+           familyi={A\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Nome},
+           giveni={N\bibinitperiod},
+           givenun=0,
+           prefix={do},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+      }
+      \strng{namehash}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \strng{fullhash}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \strng{fullhashraw}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \strng{bibnamehash}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \strng{authorbibnamehash}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \strng{authornamehash}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \strng{authorfullhash}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \strng{authorfullhashraw}{eb2274b4a6eb5ba40d95f0ed4ac9f410}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Instrumento de coleta da pesquisa}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/organizacao/repositorio
+      \endverb
+      \verb{url}
+      \verb https://github.com/organizacao/repositorio
+      \endverb
+    \endentry
+    \entry{bittar2001linguagem}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=221d0c298cd06fe0e944ee0057eacc43}{%
+           family={Bittar},
+           familyi={B\bibinitperiod},
+           given={Eduardo\bibnamedelimb Carlos\bibnamedelima Bianca},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {São Paulo}%
+      }
+      \list{publisher}{1}{%
+        {Saraiva}%
+      }
+      \strng{namehash}{221d0c298cd06fe0e944ee0057eacc43}
+      \strng{fullhash}{221d0c298cd06fe0e944ee0057eacc43}
+      \strng{fullhashraw}{221d0c298cd06fe0e944ee0057eacc43}
+      \strng{bibnamehash}{221d0c298cd06fe0e944ee0057eacc43}
+      \strng{authorbibnamehash}{221d0c298cd06fe0e944ee0057eacc43}
+      \strng{authornamehash}{221d0c298cd06fe0e944ee0057eacc43}
+      \strng{authorfullhash}{221d0c298cd06fe0e944ee0057eacc43}
+      \strng{authorfullhashraw}{221d0c298cd06fe0e944ee0057eacc43}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Linguagem jurídica}
+      \field{year}{2001}
+    \endentry
+    \entry{ufc2017guia}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b5803214dac50ff19bb989fa06e2eb2e}{%
+           family={{Universidade Federal do Ceará. Biblioteca Universitária}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Fortaleza}%
+      }
+      \list{publisher}{1}{%
+        {Biblioteca Universitária}%
+      }
+      \strng{namehash}{b5803214dac50ff19bb989fa06e2eb2e}
+      \strng{fullhash}{b5803214dac50ff19bb989fa06e2eb2e}
+      \strng{fullhashraw}{b5803214dac50ff19bb989fa06e2eb2e}
+      \strng{bibnamehash}{b5803214dac50ff19bb989fa06e2eb2e}
+      \strng{authorbibnamehash}{b5803214dac50ff19bb989fa06e2eb2e}
+      \strng{authornamehash}{b5803214dac50ff19bb989fa06e2eb2e}
+      \strng{authorfullhash}{b5803214dac50ff19bb989fa06e2eb2e}
+      \strng{authorfullhashraw}{b5803214dac50ff19bb989fa06e2eb2e}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Guia de normalização de trabalhos acadêmicos da Universidade Federal do Ceará}
+      \field{year}{2017}
+    \endentry
+    \entry{Mauricio}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f3ed11fb3da4e175aead83700dbafc11}{%
+           family={Vilches},
+           familyi={V\bibinitperiod},
+           given={Mauricio\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=f268a80483d73c8274891360738d202f}{%
+           family={UERJ},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Rio de Janeiro}%
+      }
+      \list{publisher}{1}{%
+        {UERJ}%
+      }
+      \strng{namehash}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{fullhash}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{fullhashraw}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{bibnamehash}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{authorbibnamehash}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{authornamehash}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{authorfullhash}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{authorfullhashraw}{f3ed11fb3da4e175aead83700dbafc11}
+      \strng{editorbibnamehash}{f268a80483d73c8274891360738d202f}
+      \strng{editornamehash}{f268a80483d73c8274891360738d202f}
+      \strng{editorfullhash}{f268a80483d73c8274891360738d202f}
+      \strng{editorfullhashraw}{f268a80483d73c8274891360738d202f}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cálculo para Economia e Administração: V.1}
+      \field{year}{2012}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
