@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "study/computer_science/networks/atomics/Mechanism - Transport Layer Multiplexing and Demultiplexing.md",
+                "file": "study/computer_science/networks/03-transport-layer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mechanism - Transport Layer Multiplexing and Demultiplexing"
+              "title": "03-transport-layer"
             }
           }
         ]
@@ -225,7 +225,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.0269470214844
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -246,13 +247,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c9bbebc7662b49b6",
+  "active": "9c4d78fa5cb57767",
   "lastOpenFiles": [
+    "study/computer_science/networks/atomics/Mechanism - Transport Layer Multiplexing and Demultiplexing.md",
     "study/computer_science/networks/03-transport-layer.md",
     "output/inbox/transport_layer.md",
     "study/computer_science/networks/flashcards/flashcards-03-transport-layer.md",
     "study/computer_science/networks/atomics/Protocol - User Datagram Protocol (UDP) and Checksum.md",
-    "study/computer_science/networks/atomics/Mechanism - Transport Layer Multiplexing and Demultiplexing.md",
     "study/computer_science/networks/atomics/Concept - Transport Layer Services and Principles.md",
     "research/eu/paper1_heat_burgers/paper_pinns_heat_burgers.pdf",
     "research/eu/paper2_heat_irregular_domain/paper2_heat_irregular_pinn_adi.pdf",
