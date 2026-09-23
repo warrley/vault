@@ -344,7 +344,7 @@ Now that the conceptual foundations of Section 3.1 are solidly in place, would y
 
 > [!quote] YOU
 
-mutiplexing/demutiplexing
+mutiplexing/demuiplexing
 
 
 > [!abstract] PI
