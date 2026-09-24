@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "output/files/network_exam/ap1_sim.md",
-                "mode": "source",
+                "file": "study/computer_science/networks/atomics/Protocol - Transmission Control Protocol (TCP) Segment and Connection Management.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ap1_sim"
+              "title": "Protocol - Transmission Control Protocol (TCP) Segment and Connection Management"
             }
           }
         ]
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 413.03361892700195
+    "width": 400.57080078125
   },
   "right": {
     "id": "be969ee258392cf9",
@@ -246,9 +246,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "95f8adec403d8901",
+  "active": "32a3f9112423d684",
   "lastOpenFiles": [
     "study/computer_science/networks/03-transport-layer.md",
+    "study/computer_science/networks/atomics/Concept - Transport Layer Services and Principles.md",
+    "study/computer_science/networks/atomics/Architecture - Protocol Layers OSI vs TCP-IP.md",
+    "study/computer_science/networks/flashcards/03-transport-layer/deck-01-services-and-principles.md",
+    "study/computer_science/networks/flashcards/03-transport-layer/deck-04-tcp-fundamentals-and-lifecycle.md",
     "output/files/network_exam/ap1_sim.md",
     "output/files/network_exam/WhatsApp Image 2026-09-09 at 16.56.36.jpeg",
     "output/files/network_exam/WhatsApp Image 2026-09-09 at 16.56.36 (1).jpeg",
@@ -278,13 +282,9 @@
     "study/computer_science/networks/flashcards/03-transport-layer/deck-07-congestion-control-and-fairness.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-06-flow-control.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-05-pipelining-gbn-sr-hybrid.md",
-    "study/computer_science/networks/flashcards/03-transport-layer/deck-04-tcp-fundamentals-and-lifecycle.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-03-udp-and-checksum.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-02-multiplexing-demux.md",
-    "study/computer_science/networks/flashcards/03-transport-layer/deck-01-services-and-principles.md",
     "study/computer_science/networks/flashcards/03-transport-layer",
-    "study/computer_science/networks/flashcards/flashcards-02-application-layer.md",
-    "output/inbox/transport_layer.md",
     "research/eu/paper1_heat_burgers/paper_pinns_heat_burgers.pdf",
     "research/eu/paper2_heat_irregular_domain/paper2_heat_irregular_pinn_adi.pdf",
     "research/eu/paper1_heat_burgers/paper1_heat_adi_pinn.pdf",
