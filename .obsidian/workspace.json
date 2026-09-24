@@ -80,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 413.03361892700195,
-    "collapsed": true
+    "width": 413.03361892700195
   },
   "right": {
     "id": "be969ee258392cf9",
@@ -247,7 +246,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "32a3f9112423d684",
+  "active": "95f8adec403d8901",
   "lastOpenFiles": [
     "study/computer_science/networks/03-transport-layer.md",
     "output/files/network_exam/ap1_sim.md",
