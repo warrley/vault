@@ -11,10 +11,14 @@
             "id": "32a3f9112423d684",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "study/computer_science/networks/03-transport-layer.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "03-transport-layer"
             }
           }
         ]
@@ -242,8 +246,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "95f8adec403d8901",
+  "active": "32a3f9112423d684",
   "lastOpenFiles": [
+    "output/files/network_exam",
     "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
     "study/computer_science/networks/flashcards/flashcards-03-transport-layer.md",
     "study/computer_science/networks/flashcards/02-application-layer/deck-07-ufc-lista-1-exercises.md",
@@ -272,7 +277,6 @@
     "study/computer_science/networks/flashcards/flashcards-02-application-layer.md",
     "study/computer_science/networks/03-transport-layer.md",
     "output/inbox/transport_layer.md",
-    "study/computer_science/networks/atomics/Mechanism - TCP Congestion Control and Fairness.md",
     "research/eu/paper1_heat_burgers/paper_pinns_heat_burgers.pdf",
     "research/eu/paper2_heat_irregular_domain/paper2_heat_irregular_pinn_adi.pdf",
     "research/eu/paper1_heat_burgers/paper1_heat_adi_pinn.pdf",
