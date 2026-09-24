@@ -11,14 +11,10 @@
             "id": "32a3f9112423d684",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "flashcards-01-intro-networks"
+              "title": "New tab"
             }
           }
         ]
@@ -80,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 289.7960395812988
+    "width": 413.03361892700195
   },
   "right": {
     "id": "be969ee258392cf9",
@@ -248,6 +244,24 @@
   },
   "active": "32a3f9112423d684",
   "lastOpenFiles": [
+    "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
+    "study/computer_science/networks/flashcards/flashcards-03-transport-layer.md",
+    "study/computer_science/networks/flashcards/02-application-layer/deck-07-ufc-lista-1-exercises.md",
+    "study/computer_science/networks/flashcards/02-application-layer/deck-06-p2p-architectures-and-bittorrent.md",
+    "study/computer_science/networks/flashcards/02-application-layer/deck-05-dns-hierarchy-resolution-and-rdns.md",
+    "study/computer_science/networks/flashcards/02-application-layer/deck-04-email-smtp-pop3-imap-and-mime.md",
+    "study/computer_science/networks/flashcards/02-application-layer/deck-03-web-caching-proxies-and-ftp.md",
+    "study/computer_science/networks/flashcards/02-application-layer/deck-02-http-cookies-and-rtt-math.md",
+    "study/computer_science/networks/flashcards/02-application-layer/deck-01-edge-sockets-and-transport-requirements.md",
+    "study/computer_science/networks/flashcards/01-introduction/deck-05-physical-media-and-topologies.md",
+    "study/computer_science/networks/flashcards/01-introduction/deck-04-protocol-layering-and-encapsulation.md",
+    "study/computer_science/networks/flashcards/01-introduction/deck-03-isp-hierarchy-and-peering.md",
+    "study/computer_science/networks/flashcards/01-introduction/deck-02-delays-loss-and-throughput.md",
+    "study/computer_science/networks/flashcards/01-introduction/deck-01-network-edge-and-switching.md",
+    "study/computer_science/networks/flashcards/02-application-layer",
+    "study/computer_science/networks/flashcards/01-introduction",
+    "study/computer_science/networks/flashcards/03-transport-layer/deck-08-ufc-lista-2-exercises.md",
+    "study/computer_science/networks/flashcards/03-transport-layer/deck-07-congestion-control-and-fairness.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-06-flow-control.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-05-pipelining-gbn-sr-hybrid.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-04-tcp-fundamentals-and-lifecycle.md",
@@ -256,30 +270,14 @@
     "study/computer_science/networks/flashcards/03-transport-layer/deck-01-services-and-principles.md",
     "study/computer_science/networks/flashcards/03-transport-layer",
     "study/computer_science/networks/flashcards/flashcards-02-application-layer.md",
-    "study/computer_science/networks/flashcards/flashcards-03-transport-layer.md",
     "study/computer_science/networks/03-transport-layer.md",
     "output/inbox/transport_layer.md",
     "study/computer_science/networks/atomics/Mechanism - TCP Congestion Control and Fairness.md",
-    "study/computer_science/networks/atomics/Mechanism - TCP Flow Control and Buffer Management.md",
-    "study/computer_science/networks/atomics/Mechanism - Pipelined Reliable Data Transfer (GBN, SR, and TCP Hybrid).md",
-    "study/computer_science/networks/atomics/Protocol - Transmission Control Protocol (TCP) Segment and Connection Management.md",
-    "study/computer_science/networks/atomics/Mechanism - Sockets and Inter-Process Communication.md",
-    "study/computer_science/networks/02-application-layer.md",
-    "output/inbox/peerxclient-server.md",
-    "study/computer_science/networks/atomics/Mechanism - Transport Layer Multiplexing and Demultiplexing.md",
-    "study/computer_science/networks/atomics/Protocol - User Datagram Protocol (UDP) and Checksum.md",
-    "study/computer_science/networks/atomics/Concept - Transport Layer Services and Principles.md",
     "research/eu/paper1_heat_burgers/paper_pinns_heat_burgers.pdf",
     "research/eu/paper2_heat_irregular_domain/paper2_heat_irregular_pinn_adi.pdf",
     "research/eu/paper1_heat_burgers/paper1_heat_adi_pinn.pdf",
     "research/eu/editals/Edital-EU-Quixada-2026.pdf",
     "research/eu/editals",
-    "ts.md",
-    "study/computer_science/networks/atomics/Architecture - Protocol Layers OSI vs TCP-IP.md",
-    "study/computer_science/networks/01-introduction-to-networks.md",
-    "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
-    "study/computer_science/networks/atomics/Concept - Network Edge and Application Architectures.md",
-    "study/computer_science/networks/atomics/Architecture - Application Architectures and P2P File Distribution.md",
     "research/eu/drafts/paper1_heat_adi_pinn.pdf",
     "research/eu/drafts/figures/geometry_domain_holes.png",
     "research/eu/drafts/figures/adi_regular_benchmark.png",
@@ -291,8 +289,6 @@
     "research/eu/drafts/figures/loss_convergence.png",
     "research/eu/drafts/figures/fig_cell_14_2.png",
     "research/eu/paper1_heat_adi_pinn.pdf",
-    "research/eu/drafts/paper1_heat_adi_pinn.out",
-    "research/eu/drafts/paper1_heat_adi_pinn.aux",
     "attachments/Pasted image 20260515084106.png",
     "assets/draws/so iteration.canvas",
     "tech/data_structure/paths.canvas",

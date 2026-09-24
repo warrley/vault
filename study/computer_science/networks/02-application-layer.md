@@ -83,6 +83,14 @@ Application architectures allocate discovery and data transfer duties between se
 
 ---
 
-## 3. High-Yield Flashcard Review Deck
-All test-oriented, high-precision flashcards for this module are organized in:
-👉 **[[flashcards-02-application-layer]]**
+## 3. High-Yield Modular Flashcard Review Decks
+All test-oriented, high-precision flashcards are modularly organized by sub-topic:
+
+* 🗂️ **[[flashcards/02-application-layer/deck-01-edge-sockets-and-transport-requirements|Deck 1: Sockets & Transport Requirements]]** (Edge vs Core, Sockets, TCP 4 service dimensions)
+* 🗂️ **[[flashcards/02-application-layer/deck-02-http-cookies-and-rtt-math|Deck 2: HTTP Protocol, Cookies & RTT Math]]** (Statelessness, Cookies, GET vs POST, Non-persistent vs Persistent RTT math)
+* 🗂️ **[[flashcards/02-application-layer/deck-03-web-caching-proxies-and-ftp|Deck 3: Web Caching, Proxies & FTP]]** (Transparent DNAT proxies, Conditional GET `304`, FTP Out-of-Band)
+* 🗂️ **[[flashcards/02-application-layer/deck-04-email-smtp-pop3-imap-and-mime|Deck 4: Electronic Mail (SMTP, POP3, IMAP & MIME)]]** (Push vs Pull, Spoofing, MIME Base64, IMAP advantages)
+* 🗂️ **[[flashcards/02-application-layer/deck-05-dns-hierarchy-resolution-and-rdns|Deck 5: Domain Name System (DNS) & Reverse Resolution]]** (Anycast roots, TLDs, Iterative vs Recursive, RRs, rDNS, Kaminsky attack)
+* 🗂️ **[[flashcards/02-application-layer/deck-06-p2p-architectures-and-bittorrent|Deck 6: P2P File Distribution & BitTorrent]]** (Napster, Gnutella flooding, BitTorrent Rarest-First & Tit-for-Tat)
+* 🎓 **[[flashcards/02-application-layer/deck-07-ufc-lista-1-exercises|Deck 7: UFC Official Exercise Solutions (Lista 1)]]** (All 15 questions from Professor Arthur Callado)
+

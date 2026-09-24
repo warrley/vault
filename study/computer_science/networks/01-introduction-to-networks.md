@@ -66,5 +66,12 @@ graph LR
 
 ---
 
-## 3. Flashcards Hub
-* Review the active recall deck: [[flashcards-01-intro-networks|Flashcards - Intro to Networks]]
+## 3. High-Yield Modular Flashcard Review Decks
+All active recall flashcards are modularly organized by sub-topic:
+
+* 🗂️ **[[flashcards/01-introduction/deck-01-network-edge-and-switching|Deck 1: Network Edge & Switching Paradigms]]** (Protocols, Edge vs Core, Packet vs Circuit Switching)
+* 🗂️ **[[flashcards/01-introduction/deck-02-delays-loss-and-throughput|Deck 2: Delays, Loss & Network Performance]]** (4 delays, $L/R$, $d/s$, Traffic Intensity, Bottlenecks)
+* 🗂️ **[[flashcards/01-introduction/deck-03-isp-hierarchy-and-peering|Deck 3: Global Internet Topology & ISP Hierarchy]]** (Transit vs Peering, IXPs, Hot-Potato)
+* 🗂️ **[[flashcards/01-introduction/deck-04-protocol-layering-and-encapsulation|Deck 4: Protocol Layering & Encapsulation]]** (5-layer stack, PDUs, Router L1–L3 forwarding)
+* 🗂️ **[[flashcards/01-introduction/deck-05-physical-media-and-topologies|Deck 5: Physical Media & Network Topologies]]** (Twisted pair, Fiber, Topologies, Hub vs Switch vs Router)
+

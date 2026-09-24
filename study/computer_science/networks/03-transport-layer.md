@@ -101,6 +101,16 @@ End-to-end feedback mechanisms regulating network traffic injection to prevent i
 
 ---
 
-## 3. High-Yield Flashcard Review Deck
-Active recall flashcards covering transport services, socket demultiplexing, UDP checksums, TCP headers, sliding windows, flow control, and congestion control:
-🗂️ **[[flashcards-03-transport-layer]]**
+## 3. High-Yield Modular Flashcard Review Decks
+All active-recall flashcards are modularly organized by topic to allow focused study sessions:
+
+* 🗂️ **[[flashcards/03-transport-layer/deck-01-services-and-principles|Deck 1: Transport Services & Principles]]** (L3 vs L4, Guarantees, Kurose Analogy)
+* 🗂️ **[[flashcards/03-transport-layer/deck-02-multiplexing-demux|Deck 2: Multiplexing & Demultiplexing]]** (Sockets, Port ranges, 2-Tuple vs 4-Tuple)
+* 🗂️ **[[flashcards/03-transport-layer/deck-03-udp-and-checksum|Deck 3: UDP Protocol & Checksum Algorithm]]** (8-byte header, 1's complement math)
+* 🗂️ **[[flashcards/03-transport-layer/deck-04-tcp-fundamentals-and-lifecycle|Deck 4: TCP Headers, Byte Stream & Handshakes]]** (20-byte header, 3-way/4-way handshakes)
+* 🗂️ **[[flashcards/03-transport-layer/deck-05-pipelining-gbn-sr-hybrid|Deck 5: Pipelined RDT (GBN, SR & Fast Retransmit)]]** (Sliding windows, 3 dup ACKs)
+* 🗂️ **[[flashcards/03-transport-layer/deck-06-flow-control|Deck 6: TCP Flow Control & Buffer Management]]** (RcvBuffer, rwnd math, zero-window probes)
+* 🗂️ **[[flashcards/03-transport-layer/deck-07-congestion-control-and-fairness|Deck 7: TCP Congestion Control & Fairness]]** (Slow Start, AIMD, Reno Fast Recovery)
+* 🎓 **[[flashcards/03-transport-layer/deck-08-ufc-lista-2-exercises|Deck 8: UFC Official Exercise Solutions (Lista 2)]]** (Complete Professor Arthur Callado list)
+
+*(Or review the all-in-one consolidated master deck: [[flashcards-03-transport-layer]])*
