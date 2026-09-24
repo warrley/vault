@@ -248,6 +248,7 @@
   },
   "active": "32a3f9112423d684",
   "lastOpenFiles": [
+    "study/computer_science/networks/atomics/Protocol - Transmission Control Protocol (TCP) Segment and Connection Management.md",
     "study/computer_science/networks/03-transport-layer.md",
     "study/computer_science/networks/atomics/Mechanism - Sockets and Inter-Process Communication.md",
     "study/computer_science/networks/02-application-layer.md",
@@ -284,7 +285,6 @@
     "research/irregular_domains_ideas.md",
     "research/eu/drafts/figures/adi_vs_pinn_baseline.png",
     "research/eu/drafts/figures/nn_vs_pinn_architecture.png",
-    "research/eu/drafts/IMPROVEMENTS_PAPER1.md",
     "research/eu/drafts/figures/fig_cell_12_1.png",
     "research/eu/drafts/figures/slice_y030.png",
     "research/eu/drafts/figures/loss_convergence.png",
