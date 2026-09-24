@@ -11,14 +11,12 @@
             "id": "32a3f9112423d684",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "study/computer_science/networks/atomics/Mechanism - TCP Flow Control and Buffer Management.md",
-                "mode": "source",
-                "source": false
+                "file": "output/files/network_exam/WhatsApp Image 2026-09-08 at 12.44.31.jpeg"
               },
-              "icon": "lucide-file",
-              "title": "Mechanism - TCP Flow Control and Buffer Management"
+              "icon": "lucide-image",
+              "title": "WhatsApp Image 2026-09-08 at 12.44.31"
             }
           }
         ]
@@ -80,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 400.57080078125,
-    "collapsed": true
+    "width": 400.57080078125
   },
   "right": {
     "id": "be969ee258392cf9",
@@ -249,7 +246,10 @@
   },
   "active": "32a3f9112423d684",
   "lastOpenFiles": [
+    "output/files/network_exam/WhatsApp Image 2026-09-08 at 12.44.30 (1).jpeg",
+    "output/files/network_exam/WhatsApp Image 2026-09-08 at 12.44.30.jpeg",
     "output/files/network_exam/AP1 de redes callado (1).pdf",
+    "study/computer_science/networks/atomics/Mechanism - TCP Flow Control and Buffer Management.md",
     "study/computer_science/networks/03-transport-layer.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-07-congestion-control-and-fairness.md",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-06-flow-control.md",
@@ -263,8 +263,6 @@
     "output/files/network_exam/WhatsApp Image 2026-09-09 at 16.56.36 (1).jpeg",
     "output/files/network_exam/WhatsApp Image 2026-09-08 at 12.44.31 (1).jpeg",
     "output/files/network_exam/WhatsApp Image 2026-09-08 at 12.44.31.jpeg",
-    "output/files/network_exam/WhatsApp Image 2026-09-08 at 12.44.30 (1).jpeg",
-    "output/files/network_exam/WhatsApp Image 2026-09-08 at 12.44.30.jpeg",
     "output/files/network_exam",
     "study/computer_science/networks/flashcards/flashcards-01-intro-networks.md",
     "study/computer_science/networks/flashcards/flashcards-03-transport-layer.md",
@@ -283,7 +281,6 @@
     "study/computer_science/networks/flashcards/02-application-layer",
     "study/computer_science/networks/flashcards/01-introduction",
     "study/computer_science/networks/flashcards/03-transport-layer/deck-08-ufc-lista-2-exercises.md",
-    "study/computer_science/networks/flashcards/03-transport-layer/deck-05-pipelining-gbn-sr-hybrid.md",
     "study/computer_science/networks/flashcards/03-transport-layer",
     "research/eu/paper1_heat_burgers/paper_pinns_heat_burgers.pdf",
     "research/eu/paper2_heat_irregular_domain/paper2_heat_irregular_pinn_adi.pdf",
